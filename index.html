@@ -6,32 +6,32 @@
   <meta name="description" content="Juscelia Sousa — Corretora de Imóveis credenciada CRECI 32.781. Especialista em vendas e locações em Ituberá e região, BA. Atendimento personalizado para você encontrar o imóvel ideal." />
   <title>Juscelia Sousa | Corretora de Imóveis — Ituberá, BA</title>
 
-  <!-- Google Fonts -->
+  <!-- Fontes do Google -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
 
-  <!-- Stylesheet -->
+  <!-- Etilos do Css -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- ============================================================
-       === HEADER ================================================
+       === CABEÇALHO =============================================
        ============================================================ -->
-  <header class="header" id="site-header" role="banner">
+  <header class="header" id="cabecalho" role="banner">
 
-    <!-- Brand / Logo -->
+    <!-- Marca / Logo -->
     <a href="#" class="header__brand" aria-label="Juscelia Sousa - Página inicial">
       <span class="header__name">Juscelia Sousa</span>
       <span class="header__creci">CRECI 32.781</span>
     </a>
 
-    <!-- Desktop Navigation -->
+    <!-- Navegação desktop -->
     <nav class="header__nav" aria-label="Navegação principal">
       <ul class="nav__list" role="list">
         <li>
-          <a href="#" class="nav__link active" aria-current="page">Home</a>
+          <a href="#" class="nav__link active" aria-current="page">Início</a>
         </li>
         <li>
           <a href="#imoveis" class="nav__link">Imóveis</a>
@@ -40,14 +40,15 @@
           <a href="#sobre" class="nav__link">Sobre</a>
         </li>
         <li>
+          <!-- Botão WhatsApp — mensagem: contato geral pelo site -->
           <a
-            href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+            href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+im%C3%B3veis."
             class="btn--whatsapp-nav"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Fale com Juscelia Sousa pelo WhatsApp"
           >
-            <!-- WhatsApp SVG icon -->
+            <!-- Ícone SVG do WhatsApp -->
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
@@ -57,42 +58,43 @@
       </ul>
     </nav>
 
-    <!-- Hamburger Button (mobile) -->
+    <!-- Botão hambúrguer (mobile) -->
     <button
       class="header__hamburger"
-      id="hamburger-btn"
+      id="btn-hamburger"
       aria-label="Abrir menu"
       aria-expanded="false"
-      aria-controls="mobile-menu"
+      aria-controls="menu-mobile"
     >
       <span class="hamburger__line"></span>
       <span class="hamburger__line"></span>
       <span class="hamburger__line"></span>
     </button>
 
-  </header><!-- /header -->
+  </header><!-- /cabeçalho -->
 
 
   <!-- ============================================================
-       === MOBILE MENU ===========================================
+       === MENU MOBILE ===========================================
        ============================================================ -->
   <nav
     class="mobile-menu"
-    id="mobile-menu"
+    id="menu-mobile"
     aria-label="Menu mobile"
     aria-hidden="true"
   >
     <div class="mobile-menu__inner">
-      <a href="#"        class="mobile-menu__link active" aria-current="page" data-mobile-link>Home</a>
-      <a href="#imoveis" class="mobile-menu__link" data-mobile-link>Imóveis</a>
-      <a href="#sobre"   class="mobile-menu__link" data-mobile-link>Sobre</a>
+      <a href="#"        class="mobile-menu__link active" aria-current="page" data-link-mobile>Início</a>
+      <a href="#imoveis" class="mobile-menu__link" data-link-mobile>Imóveis</a>
+      <a href="#sobre"   class="mobile-menu__link" data-link-mobile>Sobre</a>
+      <!-- Botão WhatsApp mobile — mensagem: contato pelo menu -->
       <a
-        href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+        href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+im%C3%B3veis."
         class="mobile-menu__whatsapp"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Fale com Juscelia Sousa pelo WhatsApp"
-        data-mobile-link
+        data-link-mobile
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
@@ -100,25 +102,25 @@
         Fale no WhatsApp
       </a>
     </div>
-  </nav><!-- /mobile-menu -->
+  </nav><!-- /menu-mobile -->
 
 
   <!-- ============================================================
-       === HERO SECTION ==========================================
+       === SEÇÃO HERO ============================================
        ============================================================ -->
   <section class="hero" id="inicio" aria-label="Seção principal">
 
-    <!-- Background image layer -->
+    <!-- Camada de imagem de fundo -->
     <div
       class="hero__bg"
       role="img"
       aria-label="Fachada iluminada de uma casa moderna ao entardecer, transmitindo aconchego e sofisticação"
     ></div>
 
-    <!-- Dark overlay -->
+    <!-- Sobreposição escura -->
     <div class="hero__overlay" aria-hidden="true"></div>
 
-    <!-- Hero content -->
+    <!-- Conteúdo do hero -->
     <div class="hero__content">
 
       <!-- 1. Tag de localização -->
@@ -136,7 +138,7 @@
         Especialista em vendas e locações em Ituberá e região. Atendimento personalizado com quem entende do mercado local.
       </p>
 
-      <!-- 4. Botões CTA -->
+      <!-- 4. Botões de ação -->
       <div class="hero__actions">
         <a
           href="#imoveis"
@@ -145,14 +147,15 @@
         >
           Ver Imóveis
         </a>
+        <!-- Botão WhatsApp hero — mensagem: interesse em compra ou aluguel -->
         <a
-          href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+          href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+tenho+interesse+em+comprar+ou+alugar+um+im%C3%B3vel+em+Ituber%C3%A1.+Pode+me+ajudar%3F"
           class="btn btn--outline"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Falar com Juscelia Sousa pelo WhatsApp"
         >
-          <!-- WhatsApp icon inline -->
+          <!-- Ícone WhatsApp embutido -->
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;margin-right:8px;flex-shrink:0;" aria-hidden="true" focusable="false">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
@@ -160,9 +163,9 @@
         </a>
       </div>
 
-    </div><!-- /hero__content -->
+    </div><!-- /conteúdo-hero -->
 
-    <!-- 5. Scroll down hint -->
+    <!-- 5. Indicador de rolagem -->
     <div class="hero__scroll-hint" aria-hidden="true">
       <span>Rolar</span>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -174,7 +177,7 @@
 
 
   <!-- ============================================================
-       === SOBRE MIM =============================================
+       === SEÇÃO SOBRE MIM =======================================
        ============================================================ -->
   <section id="sobre" aria-label="Sobre a corretora Juscelia Sousa">
 
@@ -196,6 +199,7 @@
 
           <p>Atuo como Gestora Imobiliária da Fazenda Coqueirais, localizada na belíssima Praia de Pratigi, em Ituberá/BA — um dos destinos mais procurados da região.</p>
 
+          <!-- Especialidades -->
           <div class="sobre__tags" role="list" aria-label="Especialidades da corretora">
             <span class="esp-tag" role="listitem">🏠 Venda Residencial</span>
             <span class="esp-tag" role="listitem">🔑 Locação</span>
@@ -244,80 +248,77 @@
 
 
   <!-- ============================================================
-       === JAVASCRIPT — HEADER SCROLL & HAMBURGER ================
+       === JAVASCRIPT — SCROLL DO CABEÇALHO E MENU HAMBÚRGUER ===
        ============================================================ -->
   <script>
     (function () {
       'use strict';
 
-      /* --- Elements -------------------------------------------- */
-      const header      = document.getElementById('site-header');
-      const hamburgerBtn = document.getElementById('hamburger-btn');
-      const mobileMenu  = document.getElementById('mobile-menu');
-      const mobileLinks = document.querySelectorAll('[data-mobile-link]');
+      /* --- Elementos do DOM ------------------------------------ */
+      const cabecalho    = document.getElementById('cabecalho');
+      const btnHamburger = document.getElementById('btn-hamburger');
+      const menuMobile   = document.getElementById('menu-mobile');
+      const linksMobile  = document.querySelectorAll('[data-link-mobile]');
 
-      /* --- Header scroll behavior ------------------------------ */
-      let lastScrollY = window.scrollY;
-
-      function handleScroll() {
+      /* --- Comportamento do cabeçalho ao rolar a página ------- */
+      function aoRolar() {
         if (window.scrollY > 10) {
-          header.classList.add('scrolled');
+          cabecalho.classList.add('scrolled');
         } else {
-          header.classList.remove('scrolled');
+          cabecalho.classList.remove('scrolled');
         }
-        lastScrollY = window.scrollY;
       }
 
-      window.addEventListener('scroll', handleScroll, { passive: true });
+      window.addEventListener('scroll', aoRolar, { passive: true });
 
-      /* Run once on load in case the page is already scrolled */
-      handleScroll();
+      /* Executa uma vez ao carregar, caso a página já esteja rolada */
+      aoRolar();
 
-      /* --- Hamburger toggle ------------------------------------ */
-      function openMenu() {
-        mobileMenu.classList.add('open');
-        mobileMenu.setAttribute('aria-hidden', 'false');
-        hamburgerBtn.setAttribute('aria-expanded', 'true');
-        hamburgerBtn.setAttribute('aria-label', 'Fechar menu');
-        document.body.style.overflow = 'hidden'; /* prevent background scroll */
+      /* --- Controle do menu hambúrguer ------------------------ */
+      function abrirMenu() {
+        menuMobile.classList.add('open');
+        menuMobile.setAttribute('aria-hidden', 'false');
+        btnHamburger.setAttribute('aria-expanded', 'true');
+        btnHamburger.setAttribute('aria-label', 'Fechar menu');
+        document.body.style.overflow = 'hidden'; /* impede rolagem do fundo */
       }
 
-      function closeMenu() {
-        mobileMenu.classList.remove('open');
-        mobileMenu.setAttribute('aria-hidden', 'true');
-        hamburgerBtn.setAttribute('aria-expanded', 'false');
-        hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
+      function fecharMenu() {
+        menuMobile.classList.remove('open');
+        menuMobile.setAttribute('aria-hidden', 'true');
+        btnHamburger.setAttribute('aria-expanded', 'false');
+        btnHamburger.setAttribute('aria-label', 'Abrir menu');
         document.body.style.overflow = '';
       }
 
-      hamburgerBtn.addEventListener('click', function () {
-        const isOpen = mobileMenu.classList.contains('open');
-        if (isOpen) {
-          closeMenu();
+      btnHamburger.addEventListener('click', function () {
+        const estaAberto = menuMobile.classList.contains('open');
+        if (estaAberto) {
+          fecharMenu();
         } else {
-          openMenu();
+          abrirMenu();
         }
       });
 
-      /* Close menu when a link is clicked */
-      mobileLinks.forEach(function (link) {
+      /* Fecha o menu ao clicar em um link */
+      linksMobile.forEach(function (link) {
         link.addEventListener('click', function () {
-          closeMenu();
+          fecharMenu();
         });
       });
 
-      /* Close menu on Escape key */
+      /* Fecha o menu ao pressionar a tecla Escape */
       document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
-          closeMenu();
-          hamburgerBtn.focus();
+        if (e.key === 'Escape' && menuMobile.classList.contains('open')) {
+          fecharMenu();
+          btnHamburger.focus();
         }
       });
 
-      /* Close menu if window resizes above desktop breakpoint */
+      /* Fecha o menu ao redimensionar para desktop */
       window.addEventListener('resize', function () {
-        if (window.innerWidth >= 1024 && mobileMenu.classList.contains('open')) {
-          closeMenu();
+        if (window.innerWidth >= 1024 && menuMobile.classList.contains('open')) {
+          fecharMenu();
         }
       });
 

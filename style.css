@@ -1,5 +1,5 @@
 /* ============================================================
-   === RESET & BASE ==========================================
+   === RESET E BASE ==========================================
    ============================================================ */
 *, *::before, *::after {
   box-sizing: border-box;
@@ -14,32 +14,32 @@ html {
 body {
   font-family: 'Zain', sans-serif;
   font-size: 16px;
-  color: var(--color-dark);
-  background-color: var(--color-beige);
+  color: var(--cor-escuro);
+  background-color: var(--cor-bege);
   overflow-x: hidden;
 }
 
 /* ============================================================
-   === CSS VARIABLES =========================================
+   === VARIÁVEIS CSS =========================================
    ============================================================ */
 :root {
-  --color-navy:  #2F4156;
-  --color-teal:  #567C8D;
-  --color-sky:   #C8D9E6;
-  --color-beige: #F5EFEB;
-  --color-white: #FFFFFF;
-  --color-dark:  #1E2D3D;
-  --color-gold:  #8C7038;
+  --cor-navy:   #2F4156; /* cabeçalhos, CTAs, textos principais */
+  --cor-teal:   #567C8D; /* elementos secundários, hover        */
+  --cor-sky:    #C8D9E6; /* destaques suaves, tags              */
+  --cor-bege:   #F5EFEB; /* fundos de seções                    */
+  --cor-branco: #FFFFFF; /* fundos de cards e navbar            */
+  --cor-escuro: #1E2D3D; /* corpo de texto                      */
+  --cor-ouro:   #8C7038; /* CRECI e detalhes dourados           */
 
-  --font-heading: 'Great Vibes', cursive;
-  --font-body:    'Zain', sans-serif;
+  --fonte-titulo: 'Great Vibes', cursive;
+  --fonte-corpo:  'Zain', sans-serif;
 
-  --header-height: 72px;
-  --transition-base: all 0.3s ease;
+  --altura-cabecalho: 72px;
+  --transicao-base: all 0.3s ease;
 }
 
 /* ============================================================
-   === HEADER ================================================
+   === CABEÇALHO =============================================
    ============================================================ */
 .header {
   position: fixed;
@@ -47,21 +47,21 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: var(--color-white);
+  background-color: var(--cor-branco);
   padding: 12px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: var(--transition-base);
+  transition: var(--transicao-base);
 }
 
-/* Scrolled state — added via JS */
+/* Estado ao rolar — adicionado via JS */
 .header.scrolled {
   box-shadow: 0 2px 20px rgba(47, 65, 86, 0.12);
   padding: 8px 20px;
 }
 
-/* --- Brand / Logo ------------------------------------------ */
+/* --- Marca / Logo ------------------------------------------ */
 .header__brand {
   display: flex;
   flex-direction: column;
@@ -70,25 +70,25 @@ body {
 }
 
 .header__name {
-  font-family: var(--font-heading);
+  font-family: var(--fonte-titulo);
   font-size: 1.9rem;
-  color: var(--color-navy);
+  color: var(--cor-navy);
   line-height: 1;
 }
 
 .header__creci {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 0.7rem;
   font-weight: 400;
-  color: var(--color-teal);
+  color: var(--cor-teal);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-top: 2px;
 }
 
-/* --- Desktop Navigation ------------------------------------ */
+/* --- Navegação desktop ------------------------------------- */
 .header__nav {
-  display: none; /* hidden on mobile */
+  display: none; /* oculto no mobile */
 }
 
 .nav__list {
@@ -99,17 +99,17 @@ body {
 }
 
 .nav__link {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--cor-navy);
   text-decoration: none;
   padding: 6px 10px;
   position: relative;
   transition: color 0.25s ease;
 }
 
-/* Animated underline */
+/* Sublinhado animado */
 .nav__link::after {
   content: '';
   position: absolute;
@@ -117,7 +117,7 @@ body {
   left: 10px;
   right: 10px;
   height: 2px;
-  background-color: var(--color-teal);
+  background-color: var(--cor-teal);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -129,19 +129,19 @@ body {
 }
 
 .nav__link:hover {
-  color: var(--color-teal);
+  color: var(--cor-teal);
 }
 
-/* WhatsApp CTA button in nav */
+/* Botão WhatsApp no cabeçalho */
 .btn--whatsapp-nav {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--color-white);
-  background-color: var(--color-navy);
+  color: var(--cor-branco);
+  background-color: var(--cor-navy);
   border: none;
   border-radius: 25px;
   padding: 10px 22px;
@@ -153,7 +153,7 @@ body {
 }
 
 .btn--whatsapp-nav:hover {
-  background-color: var(--color-teal);
+  background-color: var(--cor-teal);
   transform: translateY(-1px);
 }
 
@@ -163,7 +163,7 @@ body {
   height: 18px;
 }
 
-/* --- Hamburger button -------------------------------------- */
+/* --- Botão hambúrguer -------------------------------------- */
 .header__hamburger {
   display: flex;
   flex-direction: column;
@@ -184,13 +184,13 @@ body {
   display: block;
   width: 28px;
   height: 2.5px;
-  background-color: var(--color-navy);
+  background-color: var(--cor-navy);
   border-radius: 2px;
-  transition: var(--transition-base);
+  transition: var(--transicao-base);
   transform-origin: center;
 }
 
-/* Animate hamburger → X */
+/* Animação hambúrguer → X */
 .header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(1) {
   transform: translateY(7.5px) rotate(45deg);
 }
@@ -202,13 +202,13 @@ body {
   transform: translateY(-7.5px) rotate(-45deg);
 }
 
-/* --- Mobile Menu ------------------------------------------- */
+/* --- Menu mobile ------------------------------------------- */
 .mobile-menu {
   position: fixed;
-  top: var(--header-height);
+  top: var(--altura-cabecalho);
   left: 0;
   width: 100%;
-  background-color: var(--color-white);
+  background-color: var(--cor-branco);
   z-index: 999;
   overflow: hidden;
   max-height: 0;
@@ -227,14 +227,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  border-top: 1px solid var(--color-sky);
+  border-top: 1px solid var(--cor-sky);
 }
 
 .mobile-menu__link {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 1.1rem;
   font-weight: 700;
-  color: var(--color-navy);
+  color: var(--cor-navy);
   text-decoration: none;
   padding: 16px 24px;
   transition: background-color 0.2s ease, color 0.2s ease;
@@ -248,7 +248,7 @@ body {
 .mobile-menu__link:hover,
 .mobile-menu__link.active {
   background-color: #f7f3f0;
-  color: var(--color-teal);
+  color: var(--cor-teal);
 }
 
 .mobile-menu__whatsapp {
@@ -256,11 +256,11 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--color-white);
-  background-color: var(--color-navy);
+  color: var(--cor-branco);
+  background-color: var(--cor-navy);
   border: none;
   border-radius: 25px;
   padding: 14px 32px;
@@ -272,7 +272,7 @@ body {
 }
 
 .mobile-menu__whatsapp:hover {
-  background-color: var(--color-teal);
+  background-color: var(--cor-teal);
 }
 
 .mobile-menu__whatsapp svg {
@@ -282,7 +282,7 @@ body {
 }
 
 /* ============================================================
-   === HERO SECTION ==========================================
+   === SEÇÃO HERO ============================================
    ============================================================ */
 .hero {
   position: relative;
@@ -295,7 +295,7 @@ body {
   overflow: hidden;
 }
 
-/* Background image */
+/* Imagem de fundo */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -306,7 +306,7 @@ body {
   z-index: 0;
 }
 
-/* Overlay gradient */
+/* Sobreposição gradiente */
 .hero__overlay {
   position: absolute;
   inset: 0;
@@ -319,7 +319,7 @@ body {
   z-index: 1;
 }
 
-/* Content container */
+/* Contêiner do conteúdo */
 .hero__content {
   position: relative;
   z-index: 2;
@@ -331,12 +331,12 @@ body {
   width: 100%;
   max-width: 780px;
   gap: 20px;
-  animation: heroFadeUp 0.9s ease both;
+  animation: heroSubir 0.9s ease both;
   animation-delay: 0.15s;
 }
 
-/* Fade-up entrance animation */
-@keyframes heroFadeUp {
+/* Animação de entrada (fade + subida) */
+@keyframes heroSubir {
   from {
     opacity: 0;
     transform: translateY(28px);
@@ -347,12 +347,12 @@ body {
   }
 }
 
-/* 1. Location tag */
+/* 1. Tag de localização */
 .hero__tag {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 0.78rem;
   font-weight: 400;
-  color: var(--color-sky);
+  color: var(--cor-sky);
   letter-spacing: 0.15em;
   text-transform: uppercase;
   background-color: rgba(255, 255, 255, 0.08);
@@ -362,41 +362,41 @@ body {
   backdrop-filter: blur(4px);
 }
 
-/* 2. Main heading */
+/* 2. Título principal */
 .hero__title {
-  font-family: var(--font-heading);
+  font-family: var(--fonte-titulo);
   font-size: clamp(2.8rem, 7vw, 5.5rem);
-  color: var(--color-white);
+  color: var(--cor-branco);
   line-height: 1.15;
   margin: 0;
 }
 
-/* 3. Subtitle */
+/* 3. Subtítulo */
 .hero__subtitle {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: clamp(1rem, 2.5vw, 1.2rem);
   font-weight: 400;
-  color: var(--color-beige);
+  color: var(--cor-bege);
   max-width: 600px;
   line-height: 1.6;
   opacity: 0.92;
 }
 
-/* 4. Buttons wrapper */
+/* 4. Grupo de botões */
 .hero__actions {
   display: flex;
-  flex-direction: column; /* stacked on mobile */
+  flex-direction: column; /* empilhado no mobile */
   gap: 14px;
   width: 100%;
   margin-top: 4px;
 }
 
-/* Shared button base */
+/* Base compartilhada dos botões */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 1rem;
   font-weight: 700;
   border-radius: 25px;
@@ -405,15 +405,16 @@ body {
   cursor: pointer;
   text-decoration: none;
   border: 2px solid transparent;
-  transition: var(--transition-base);
+  transition: var(--transicao-base);
   letter-spacing: 0.03em;
-  width: 100%; /* full width on mobile */
+  width: 100%; /* largura total no mobile */
 }
 
+/* Botão primário */
 .btn--primary {
-  background-color: var(--color-teal);
-  color: var(--color-white);
-  border-color: var(--color-teal);
+  background-color: var(--cor-teal);
+  color: var(--cor-branco);
+  border-color: var(--cor-teal);
 }
 
 .btn--primary:hover {
@@ -423,20 +424,21 @@ body {
   box-shadow: 0 8px 20px rgba(86, 124, 141, 0.4);
 }
 
+/* Botão contorno */
 .btn--outline {
   background-color: transparent;
-  color: var(--color-white);
-  border-color: var(--color-white);
+  color: var(--cor-branco);
+  border-color: var(--cor-branco);
 }
 
 .btn--outline:hover {
-  background-color: var(--color-white);
-  color: var(--color-navy);
+  background-color: var(--cor-branco);
+  color: var(--cor-navy);
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 
-/* 5. Scroll arrow */
+/* 5. Indicador de rolagem */
 .hero__scroll-hint {
   position: absolute;
   bottom: 28px;
@@ -447,15 +449,15 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  color: var(--color-white);
+  color: var(--cor-branco);
   opacity: 0.75;
-  animation: bounce 2.2s ease-in-out infinite;
+  animation: saltar 2.2s ease-in-out infinite;
   text-decoration: none;
   cursor: default;
 }
 
 .hero__scroll-hint span {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 0.7rem;
   font-weight: 300;
   letter-spacing: 0.12em;
@@ -467,13 +469,13 @@ body {
   height: 22px;
 }
 
-@keyframes bounce {
+@keyframes saltar {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50%       { transform: translateX(-50%) translateY(9px); }
 }
 
 /* ============================================================
-   === SOBRE MIM SECTION =====================================
+   === SEÇÃO SOBRE MIM =======================================
    ============================================================ */
 .sobre-section {
   background-color: #F5ECD7;
@@ -502,19 +504,19 @@ body {
 }
 
 .sobre__texto h2 {
-  font-family: var(--font-heading);
+  font-family: var(--fonte-titulo);
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--color-navy);
+  color: var(--cor-navy);
   line-height: 1;
   padding-top: 10px;
   margin-bottom: 4px;
 }
 
 .sobre__creci {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 0.9rem;
   font-weight: 700;
-  color: var(--color-gold);
+  color: var(--cor-ouro);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 20px;
@@ -522,7 +524,7 @@ body {
 }
 
 .sobre__texto p {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 1.1rem;
   color: #333333;
   line-height: 1.7;
@@ -536,13 +538,14 @@ body {
   margin-top: 20px;
 }
 
+/* Tags de especialidade */
 .esp-tag {
   background: rgba(47, 65, 86, 0.08);
-  color: var(--color-navy);
+  color: var(--cor-navy);
   border: 1px solid rgba(47, 65, 86, 0.18);
   padding: 6px 16px;
   border-radius: 20px;
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: 0.85rem;
   font-weight: 500;
   transition: background-color 0.2s ease;
@@ -552,9 +555,9 @@ body {
   background: rgba(47, 65, 86, 0.15);
 }
 
-/* Trajetória */
+/* Seção trajetória */
 .trajetoria-section {
-  background-color: var(--color-beige);
+  background-color: var(--cor-bege);
   padding: 60px 30px;
 }
 
@@ -564,21 +567,23 @@ body {
 }
 
 .trajetoria-section .titulo-principal h2 {
-  font-family: var(--font-body);
+  font-family: var(--fonte-corpo);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 800;
-  color: var(--color-navy);
+  color: var(--cor-navy);
   margin-bottom: 12px;
 }
 
+/* Linha decorativa abaixo do título */
 .linha-decorativa {
   width: 60px;
   height: 3px;
-  background-color: var(--color-teal);
+  background-color: var(--cor-teal);
   margin: 0 auto;
   border-radius: 2px;
 }
 
+/* Grade dos cards de trajetória */
 .trajetoria-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -588,7 +593,7 @@ body {
 }
 
 .card-traj {
-  background: var(--color-white);
+  background: var(--cor-branco);
   padding: 40px 30px;
   border-radius: 20px;
   text-align: center;
@@ -611,7 +616,7 @@ body {
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 800;
-  color: var(--color-navy);
+  color: var(--cor-navy);
   margin-bottom: 12px;
   letter-spacing: 0.05em;
 }
@@ -623,7 +628,7 @@ body {
 }
 
 /* ============================================================
-   === TABLET BREAKPOINT — 768px =============================
+   === BREAKPOINT TABLET — 768px =============================
    ============================================================ */
 @media (min-width: 768px) {
   .header {
@@ -644,7 +649,7 @@ body {
   }
 
   .hero__actions {
-    flex-direction: row; /* side by side on tablet */
+    flex-direction: row; /* lado a lado no tablet */
     justify-content: center;
     width: auto;
   }
@@ -656,11 +661,11 @@ body {
 }
 
 /* ============================================================
-   === DESKTOP BREAKPOINT — 1024px ===========================
+   === BREAKPOINT DESKTOP — 1024px ===========================
    ============================================================ */
 @media (min-width: 1024px) {
   :root {
-    --header-height: 80px;
+    --altura-cabecalho: 80px;
   }
 
   .header {
@@ -671,7 +676,7 @@ body {
     padding: 10px 60px;
   }
 
-  /* Show desktop nav, hide hamburger */
+  /* Exibe a navegação desktop e oculta o hambúrguer */
   .header__nav {
     display: flex;
     align-items: center;
@@ -681,7 +686,7 @@ body {
     display: none;
   }
 
-  /* Mobile menu never shows on desktop */
+  /* Menu mobile nunca aparece no desktop */
   .mobile-menu {
     display: none;
   }
@@ -720,15 +725,15 @@ body {
 }
 
 /* ============================================================
-   === ACCESSIBILITY — FOCUS RING ============================
+   === ACESSIBILIDADE — ANEL DE FOCO =========================
    ============================================================ */
 :focus-visible {
-  outline: 3px solid var(--color-sky);
+  outline: 3px solid var(--cor-sky);
   outline-offset: 3px;
   border-radius: 4px;
 }
 
-/* Reduced motion */
+/* Movimento reduzido — respeita preferência do sistema */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
