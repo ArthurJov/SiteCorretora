@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Juscelia Sousa — Corretora de Imóveis credenciada CRECI 32.781. Especialista em vendas e locações em Ituberá e região, BA. Atendimento personalizado para você encontrar o imóvel ideal." />
+  <title>Juscelia Sousa | Corretora de Imóveis — Ituberá, BA</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       === RESET & BASE ==========================================
+       ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Zain', sans-serif;
+      font-size: 16px;
+      color: var(--color-dark);
+      background-color: var(--color-beige);
+      overflow-x: hidden;
+    }
+
+    /* ============================================================
+       === CSS VARIABLES =========================================
+       ============================================================ */
+    :root {
+      --color-navy:  #2F4156;
+      --color-teal:  #567C8D;
+      --color-sky:   #C8D9E6;
+      --color-beige: #F5EFEB;
+      --color-white: #FFFFFF;
+      --color-dark:  #1E2D3D;
+
+      --font-heading: 'Great Vibes', cursive;
+      --font-body:    'Zain', sans-serif;
+
+      --header-height: 72px;
+      --transition-base: all 0.3s ease;
+    }
+
+    /* ============================================================
+       === HEADER ================================================
+       ============================================================ */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background-color: var(--color-white);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: var(--transition-base);
+    }
+
+    /* Scrolled state — added via JS */
+    .header.scrolled {
+      box-shadow: 0 2px 20px rgba(47, 65, 86, 0.12);
+      padding: 8px 20px;
+    }
+
+    /* --- Brand / Logo ------------------------------------------ */
+    .header__brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      text-decoration: none;
+    }
+
+    .header__name {
+      font-family: var(--font-heading);
+      font-size: 1.9rem;
+      color: var(--color-navy);
+      line-height: 1;
+    }
+
+    .header__creci {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: var(--color-teal);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* --- Desktop Navigation ------------------------------------ */
+    .header__nav {
+      display: none; /* hidden on mobile */
+    }
+
+    .nav__list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav__link {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      text-decoration: none;
+      padding: 6px 10px;
+      position: relative;
+      transition: color 0.25s ease;
+    }
+
+    /* Animated underline */
+    .nav__link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      right: 10px;
+      height: 2px;
+      background-color: var(--color-teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .nav__link:hover::after,
+    .nav__link.active::after {
+      transform: scaleX(1);
+    }
+
+    .nav__link:hover {
+      color: var(--color-teal);
+    }
+
+    /* WhatsApp CTA button in nav */
+    .btn--whatsapp-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--color-white);
+      background-color: var(--color-navy);
+      border: none;
+      border-radius: 25px;
+      padding: 10px 22px;
+      text-decoration: none;
+      cursor: pointer;
+      min-height: 48px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn--whatsapp-nav:hover {
+      background-color: var(--color-teal);
+      transform: translateY(-1px);
+    }
+
+    .btn--whatsapp-nav svg {
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+    }
+
+    /* --- Hamburger button -------------------------------------- */
+    .header__hamburger {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 28px;
+      height: 20px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .hamburger__line {
+      display: block;
+      width: 28px;
+      height: 2.5px;
+      background-color: var(--color-navy);
+      border-radius: 2px;
+      transition: var(--transition-base);
+      transform-origin: center;
+    }
+
+    /* Animate hamburger → X */
+    .header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .header__hamburger[aria-expanded="true"] .hamburger__line:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* --- Mobile Menu ------------------------------------------- */
+    .mobile-menu {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100%;
+      background-color: var(--color-white);
+      z-index: 999;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                  box-shadow 0.3s ease;
+      box-shadow: none;
+    }
+
+    .mobile-menu.open {
+      max-height: 400px;
+      box-shadow: 0 8px 24px rgba(47, 65, 86, 0.15);
+    }
+
+    .mobile-menu__inner {
+      padding: 12px 0 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      border-top: 1px solid var(--color-sky);
+    }
+
+    .mobile-menu__link {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--color-navy);
+      text-decoration: none;
+      padding: 16px 24px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      border-bottom: 1px solid #f0eae6;
+    }
+
+    .mobile-menu__link:last-of-type {
+      border-bottom: none;
+    }
+
+    .mobile-menu__link:hover,
+    .mobile-menu__link.active {
+      background-color: #f7f3f0;
+      color: var(--color-teal);
+    }
+
+    .mobile-menu__whatsapp {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-white);
+      background-color: var(--color-navy);
+      border: none;
+      border-radius: 25px;
+      padding: 14px 32px;
+      text-decoration: none;
+      cursor: pointer;
+      min-height: 48px;
+      margin: 20px 24px 0;
+      transition: background-color 0.3s ease;
+    }
+
+    .mobile-menu__whatsapp:hover {
+      background-color: var(--color-teal);
+    }
+
+    .mobile-menu__whatsapp svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       === HERO SECTION ==========================================
+       ============================================================ */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100svh;
+      min-height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    /* Background image */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+
+    /* Overlay gradient */
+    .hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(47, 65, 86, 0.65) 0%,
+        rgba(47, 65, 86, 0.55) 60%,
+        rgba(47, 65, 86, 0.70) 100%
+      );
+      z-index: 1;
+    }
+
+    /* Content container */
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 24px;
+      width: 100%;
+      max-width: 780px;
+      gap: 20px;
+      animation: heroFadeUp 0.9s ease both;
+      animation-delay: 0.15s;
+    }
+
+    /* Fade-up entrance animation */
+    @keyframes heroFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* 1. Location tag */
+    .hero__tag {
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--color-sky);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      background-color: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(200, 217, 230, 0.35);
+      padding: 6px 18px;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+    }
+
+    /* 2. Main heading */
+    .hero__title {
+      font-family: var(--font-heading);
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      color: var(--color-white);
+      line-height: 1.15;
+      margin: 0;
+    }
+
+    /* 3. Subtitle */
+    .hero__subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 400;
+      color: var(--color-beige);
+      max-width: 600px;
+      line-height: 1.6;
+      opacity: 0.92;
+    }
+
+    /* 4. Buttons wrapper */
+    .hero__actions {
+      display: flex;
+      flex-direction: column; /* stacked on mobile */
+      gap: 14px;
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    /* Shared button base */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 700;
+      border-radius: 25px;
+      padding: 14px 32px;
+      min-height: 48px;
+      cursor: pointer;
+      text-decoration: none;
+      border: 2px solid transparent;
+      transition: var(--transition-base);
+      letter-spacing: 0.03em;
+      width: 100%; /* full width on mobile */
+    }
+
+    .btn--primary {
+      background-color: var(--color-teal);
+      color: var(--color-white);
+      border-color: var(--color-teal);
+    }
+
+    .btn--primary:hover {
+      background-color: #4a6b7c;
+      border-color: #4a6b7c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(86, 124, 141, 0.4);
+    }
+
+    .btn--outline {
+      background-color: transparent;
+      color: var(--color-white);
+      border-color: var(--color-white);
+    }
+
+    .btn--outline:hover {
+      background-color: var(--color-white);
+      color: var(--color-navy);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* 5. Scroll arrow */
+    .hero__scroll-hint {
+      position: absolute;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      color: var(--color-white);
+      opacity: 0.75;
+      animation: bounce 2.2s ease-in-out infinite;
+      text-decoration: none;
+      cursor: default;
+    }
+
+    .hero__scroll-hint span {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero__scroll-hint svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50%       { transform: translateX(-50%) translateY(9px); }
+    }
+
+    /* ============================================================
+       === TABLET BREAKPOINT — 768px =============================
+       ============================================================ */
+    @media (min-width: 768px) {
+      .header {
+        padding: 14px 32px;
+      }
+
+      .header.scrolled {
+        padding: 10px 32px;
+      }
+
+      .header__name {
+        font-size: 2.1rem;
+      }
+
+      .hero__content {
+        padding: 0 40px;
+        gap: 24px;
+      }
+
+      .hero__actions {
+        flex-direction: row; /* side by side on tablet */
+        justify-content: center;
+        width: auto;
+      }
+
+      .btn {
+        width: auto;
+        min-width: 190px;
+      }
+    }
+
+    /* ============================================================
+       === DESKTOP BREAKPOINT — 1024px ===========================
+       ============================================================ */
+    @media (min-width: 1024px) {
+      :root {
+        --header-height: 80px;
+      }
+
+      .header {
+        padding: 16px 60px;
+      }
+
+      .header.scrolled {
+        padding: 10px 60px;
+      }
+
+      /* Show desktop nav, hide hamburger */
+      .header__nav {
+        display: flex;
+        align-items: center;
+      }
+
+      .header__hamburger {
+        display: none;
+      }
+
+      /* Mobile menu never shows on desktop */
+      .mobile-menu {
+        display: none;
+      }
+
+      .hero__content {
+        padding: 0 60px;
+        gap: 28px;
+      }
+
+      .hero__tag {
+        font-size: 0.82rem;
+      }
+    }
+
+    /* ============================================================
+       === ACCESSIBILITY — FOCUS RING ============================
+       ============================================================ */
+    :focus-visible {
+      outline: 3px solid var(--color-sky);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       === HEADER ================================================
+       ============================================================ -->
+  <header class="header" id="site-header" role="banner">
+
+    <!-- Brand / Logo -->
+    <a href="#" class="header__brand" aria-label="Juscelia Sousa - Página inicial">
+      <span class="header__name">Juscelia Sousa</span>
+      <span class="header__creci">CRECI 32.781</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="header__nav" aria-label="Navegação principal">
+      <ul class="nav__list" role="list">
+        <li>
+          <a href="#" class="nav__link active" aria-current="page">Home</a>
+        </li>
+        <li>
+          <a href="#imoveis" class="nav__link">Imóveis</a>
+        </li>
+        <li>
+          <a href="#sobre" class="nav__link">Sobre</a>
+        </li>
+        <li>
+          <a
+            href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+            class="btn--whatsapp-nav"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Fale com Juscelia Sousa pelo WhatsApp"
+          >
+            <!-- WhatsApp SVG icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Hamburger Button (mobile) -->
+    <button
+      class="header__hamburger"
+      id="hamburger-btn"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+
+  </header><!-- /header -->
+
+
+  <!-- ============================================================
+       === MOBILE MENU ===========================================
+       ============================================================ -->
+  <nav
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-label="Menu mobile"
+    aria-hidden="true"
+  >
+    <div class="mobile-menu__inner">
+      <a href="#"        class="mobile-menu__link active" aria-current="page" data-mobile-link>Home</a>
+      <a href="#imoveis" class="mobile-menu__link" data-mobile-link>Imóveis</a>
+      <a href="#sobre"   class="mobile-menu__link" data-mobile-link>Sobre</a>
+      <a
+        href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+        class="mobile-menu__whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fale com Juscelia Sousa pelo WhatsApp"
+        data-mobile-link
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Fale no WhatsApp
+      </a>
+    </div>
+  </nav><!-- /mobile-menu -->
+
+
+  <!-- ============================================================
+       === HERO SECTION ==========================================
+       ============================================================ -->
+  <section class="hero" id="inicio" aria-label="Seção principal">
+
+    <!-- Background image layer -->
+    <div
+      class="hero__bg"
+      role="img"
+      aria-label="Fachada iluminada de uma casa moderna ao entardecer, transmitindo aconchego e sofisticação"
+    ></div>
+
+    <!-- Dark overlay -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <!-- Hero content -->
+    <div class="hero__content">
+
+      <!-- 1. Tag de localização -->
+      <span class="hero__tag" aria-label="Localização: Ituberá, Bahia">
+        Corretora de Imóveis &bull; Ituberá, BA
+      </span>
+
+      <!-- 2. Título principal -->
+      <h1 class="hero__title">
+        Encontre o imóvel ideal para você
+      </h1>
+
+      <!-- 3. Subtítulo -->
+      <p class="hero__subtitle">
+        Especialista em vendas e locações em Ituberá e região. Atendimento personalizado com quem entende do mercado local.
+      </p>
+
+      <!-- 4. Botões CTA -->
+      <div class="hero__actions">
+        <a
+          href="#imoveis"
+          class="btn btn--primary"
+          aria-label="Ver os imóveis disponíveis"
+        >
+          Ver Imóveis
+        </a>
+        <a
+          href="https://wa.me/55XXXXXXXXXXX?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+          class="btn btn--outline"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Falar com Juscelia Sousa pelo WhatsApp"
+        >
+          <!-- WhatsApp icon inline -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;margin-right:8px;flex-shrink:0;" aria-hidden="true" focusable="false">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Fale no WhatsApp
+        </a>
+      </div>
+
+    </div><!-- /hero__content -->
+
+    <!-- 5. Scroll down hint -->
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Rolar</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+
+  </section><!-- /hero -->
+
+
+  <!-- ============================================================
+       === JAVASCRIPT — HEADER SCROLL & HAMBURGER ================
+       ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --- Elements -------------------------------------------- */
+      const header      = document.getElementById('site-header');
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const mobileMenu  = document.getElementById('mobile-menu');
+      const mobileLinks = document.querySelectorAll('[data-mobile-link]');
+
+      /* --- Header scroll behavior ------------------------------ */
+      let lastScrollY = window.scrollY;
+
+      function handleScroll() {
+        if (window.scrollY > 10) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+        lastScrollY = window.scrollY;
+      }
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+
+      /* Run once on load in case the page is already scrolled */
+      handleScroll();
+
+      /* --- Hamburger toggle ------------------------------------ */
+      function openMenu() {
+        mobileMenu.classList.add('open');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        hamburgerBtn.setAttribute('aria-label', 'Fechar menu');
+        document.body.style.overflow = 'hidden'; /* prevent background scroll */
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('open');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
+        document.body.style.overflow = '';
+      }
+
+      hamburgerBtn.addEventListener('click', function () {
+        const isOpen = mobileMenu.classList.contains('open');
+        if (isOpen) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+
+      /* Close menu when a link is clicked */
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+          closeMenu();
+        });
+      });
+
+      /* Close menu on Escape key */
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          closeMenu();
+          hamburgerBtn.focus();
+        }
+      });
+
+      /* Close menu if window resizes above desktop breakpoint */
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 1024 && mobileMenu.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
