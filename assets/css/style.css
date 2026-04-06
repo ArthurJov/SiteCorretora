@@ -725,6 +725,68 @@ body {
 }
 
 /* ============================================================
+   === BOTÃO FLUTUANTE WHATSAPP ==============================
+   ============================================================ */
+
+/* Anel de pulso ao redor do botão */
+@keyframes pulsarWpp {
+  0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.55); }
+  70%  { box-shadow: 0 0 0 14px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.btn-wpp-flutuante {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+
+  background-color: #25D366; /* verde oficial do WhatsApp */
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+  animation: pulsarWpp 2.4s ease-in-out infinite;
+
+  transition: transform 0.25s ease, background-color 0.25s ease;
+  text-decoration: none;
+}
+
+.btn-wpp-flutuante svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.btn-wpp-flutuante:hover {
+  background-color: #1ebe5d;
+  transform: scale(1.1);
+  animation-play-state: paused; /* pausa o pulso no hover */
+}
+
+/* Menor em telas pequenas */
+@media (max-width: 480px) {
+  .btn-wpp-flutuante {
+    width: 52px;
+    height: 52px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .btn-wpp-flutuante svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* ============================================================
    === ACESSIBILIDADE — ANEL DE FOCO =========================
    ============================================================ */
 :focus-visible {
