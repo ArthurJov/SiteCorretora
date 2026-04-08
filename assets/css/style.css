@@ -477,96 +477,28 @@ body {
 /* ============================================================
    === SEÇÃO SOBRE MIM =======================================
    ============================================================ */
-.sobre-section {
-  background-color: #F5ECD7;
-}
 
-.sobre-inner {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  max-width: 1220px;
-  margin: 0 auto;
-  padding: 60px 30px;
-  gap: 40px;
-  align-items: center;
-}
 
-.sobre__foto img {
-  width: 100%;
-  max-width: 420px;
-  height: auto;
-  border-radius: 20px;
-  display: block;
-}
-
-.sobre__texto {
-  width: 100%;
-}
-
-.sobre__texto h2 {
-  font-family: var(--fonte-titulo);
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--cor-navy);
-  line-height: 1;
-  padding-top: 10px;
-  margin-bottom: 4px;
-}
-
-.sobre__creci {
-  font-family: var(--fonte-corpo);
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--cor-ouro);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 20px;
-  display: block;
-}
-
-.sobre__texto p {
-  font-family: var(--fonte-corpo);
-  font-size: 1.1rem;
-  color: #333333;
-  line-height: 1.7;
-  margin-bottom: 12px;
-}
-
-.sobre__tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
-}
 
 /* Tags de especialidade */
-.esp-tag {
-  background: rgba(47, 65, 86, 0.08);
-  color: var(--cor-navy);
-  border: 1px solid rgba(47, 65, 86, 0.18);
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-family: var(--fonte-corpo);
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: background-color 0.2s ease;
-}
 
-.esp-tag:hover {
+
+.esp-t-ag:hover {
   background: rgba(47, 65, 86, 0.15);
 }
 
 /* Seção trajetória */
-.trajetoria-section {
+.trajet-oria-section {
   background-color: var(--cor-bege);
   padding: 60px 30px;
 }
 
-.trajetoria-section .titulo-principal {
+.trajet-oria-section .titulo-pri-ncipal {
   text-align: center;
   margin-bottom: 48px;
 }
 
-.trajetoria-section .titulo-principal h2 {
+.trajetori-a-section .titulo--principal h2 {
   font-family: var(--fonte-corpo);
   font-size: clamp(1.6rem, 3vw, 2.2rem);
   font-weight: 800;
@@ -584,7 +516,7 @@ body {
 }
 
 /* Grade dos cards de trajetória */
-.trajetoria-grid {
+.trajetor-ia-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -592,7 +524,7 @@ body {
   margin: 0 auto;
 }
 
-.card-traj {
+.card-tr-aj {
   background: var(--cor-branco);
   padding: 40px 30px;
   border-radius: 20px;
@@ -601,18 +533,18 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card-traj:hover {
+.card-tr-aj:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(47, 65, 86, 0.12);
 }
 
-.card-traj .icon {
+.card-tra-j .icon {
   font-size: 2.5rem;
   margin-bottom: 16px;
   display: block;
 }
 
-.card-traj h3 {
+.card-tr-aj h3 {
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: 800;
@@ -621,7 +553,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-.card-traj p {
+.card-t-raj p {
   font-size: 1rem;
   line-height: 1.6;
   color: #555;

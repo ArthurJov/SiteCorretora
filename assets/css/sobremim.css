@@ -3,11 +3,6 @@
   font-weight: 400;
   font-style: normal;
 }
-/* .zain-regular {
-  font-family: "Zain", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-} */
 
 body
 {
@@ -22,17 +17,21 @@ h1, h5{
     padding: 0;
 }
 
-#color {
+/* cor de fundo */
+.color {
 
     background-color: #F5ECD7;
 }
+
+/* sobremim */
+
 #sobre {
     
     display: grid;
     grid-template-columns: 1fr 2fr; 
     max-width: 1220px; 
     margin: 0 auto;   
-    padding: 30px;
+    padding: 60px 30px;
     gap: 40px;        
     align-items: center;
 }
@@ -43,13 +42,13 @@ h1, h5{
     max-width: 420px;  
     height: auto;      
     border-radius: 20px;
+    display: block;
 }
 
 .sobremim{
     width: 100%;
     height: 100%;
     margin: 0;
-   /* background-color: aquamarine; */
 }
 .sobremim h1{
     padding-top: 30px;
@@ -66,31 +65,45 @@ h1, h5{
     color: #333333;
 }
 
+/* tags abaixo do sobre */
+
 .esp-tag {
-  background: rgba(107,66,38,0.09);
+  background: rgba(47, 65, 86, 0.08);
   color: var(--brown);
-  border: 1px solid rgba(107,66,38,0.18);
+  border: 1px solid rgba(47, 65, 86, 0.18);
   padding: 6px 16px;
   border-radius: 20px;
   font-size: 0.82rem;
   font-weight: 500;
-  margin: 10px;
-  line-height: 3;
+  margin: 5px;
+  line-height: 48px;
 }
+
+
+/* trajetoria */
 
 #trajetoria {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 40px;
+    max-width: 1200px;  
+    margin: 0 auto;    
+    padding: 0 40px;    
 }
 
-.card-traj {
-    background: var(--branco);
+.titulo-principal {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-top: 3rem;
+    font-size: 25px;
+}
+.card-traj{
+    background-color: #F5ECD7;
     padding: 40px 30px;
-    border-radius: 20px;
+    border-radius: 50px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease;
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-traj:hover {
@@ -103,18 +116,146 @@ h1, h5{
     display: block;
 }
 
-.card-traj h2 {
-    text-transform: uppercase;
-    font-size: 1.5rem;
-    color: var(--dourado-escuro);
-    margin-bottom: 15px;
+.card-traj h3 {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--cor-navy);
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
 }
 
 .card-traj p {
-    font-size: 1.2rem;
-    line-height: 1.3;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
 }
 
+/* Missão */
+
+#missao {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;  
+    margin: 0 auto;    
+    padding: 0 40px;    
+}
+.card-guia{
+    padding: 40px 30px;
+    border-radius: 50px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.card-guia:hover {
+    transform: translateY(-10px);
+}
+
+.card-guia .icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: block;
+    text-align: start;
+}
+
+.card-guia h3 {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.card-guia p {
+    font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* convocação */
+
+#convocacao {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px; 
+    text-align: center;
+}
+
+#convocacao h1 {
+    font-family: "Zain", sans-serif;
+    font-weight: 800;
+    font-size: 80px; 
+    margin-bottom: 20px;
+    line-height: 1;
+}
+
+#convocacao p {
+    max-width: 650px;
+    font-size: 22px;
+    line-height: 1.5; 
+    color: #444;      
+    margin-bottom: 40px;
+    
+    
+}
+/* buttons */
+
+/* Container para alinhar os botões lado a lado e centralizados */
+.container-ctas {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    gap: 20px;               
+    margin-top: 30px;
+}
+
+/* Base comum para os botões */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* Estilo do botão Ver Portfólio  */
+.btn-portfolio {
+    background-color: transparent;
+    color: #333; 
+    border: 2px solid #333;
+}
+
+.btn-portfolio:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+.btn-wpp {
+    background-color: #25d366; 
+    color: white;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+}
+
+.btn-wpp:hover {
+    background-color: #1ebe57;
+    transform: scale(1.05); 
+}
+
+/* Espaço entre o ícone SVG e o texto */
+.wpp-icon {
+  max-width: 20px;
+  max-height: 20px;
+  margin-right: 10px;
+}
 
 
 /* Muda para uma coluna só */
@@ -125,4 +266,8 @@ h1, h5{
     #trajetoria {
         grid-template-columns: 1fr; 
     }
+    #missao {
+        grid-template-columns: 1fr; 
+    }
+
 }
