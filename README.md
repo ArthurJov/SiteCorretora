@@ -102,11 +102,11 @@ Como trata-se de um projeto estático (sem backend), basta abrir o link: https:/
 
 ## 👨‍💻 Desenvolvedor
 
-Desenvolvido por **Arthur Vieira
-Fernanda Pereira
-Filipe de Jesus
-Lucas  Figueiredo
-Arthur Carvalho 
+Desenvolvido por **Arthur Vieira, 
+Fernanda Pereira, 
+Filipe de Jesus, 
+Lucas  Figueiredo, 
+Arthur Carvalho, 
 Alexandro Junior
 ** como projeto acadêmico na disciplina de Desenvolvimento Web — **UNIJORGE (Centro Universitário Jorge Amado)**, Salvador, BA.
 
