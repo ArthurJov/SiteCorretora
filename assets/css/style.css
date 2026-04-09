@@ -478,35 +478,7 @@ body {
    === SEÇÃO SOBRE MIM =======================================
    ============================================================ */
 
-
-
-/* Tags de especialidade */
-
-
-.esp-t-ag:hover {
-  background: rgba(47, 65, 86, 0.15);
-}
-
-/* Seção trajetória */
-.trajet-oria-section {
-  background-color: var(--cor-bege);
-  padding: 60px 30px;
-}
-
-.trajet-oria-section .titulo-pri-ncipal {
-  text-align: center;
-  margin-bottom: 48px;
-}
-
-.trajetori-a-section .titulo--principal h2 {
-  font-family: var(--fonte-corpo);
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 800;
-  color: var(--cor-navy);
-  margin-bottom: 12px;
-}
-
-/* Linha decorativa abaixo do título */
+/* Linha decorativa abaixo dos títulos */
 .linha-decorativa {
   width: 60px;
   height: 3px;
@@ -515,48 +487,10 @@ body {
   border-radius: 2px;
 }
 
-/* Grade dos cards de trajetória */
-.trajetor-ia-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.card-tr-aj {
-  background: var(--cor-branco);
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-tr-aj:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(47, 65, 86, 0.12);
-}
-
-.card-tra-j .icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
-  display: block;
-}
-
-.card-tr-aj h3 {
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--cor-navy);
-  margin-bottom: 12px;
-  letter-spacing: 0.05em;
-}
-
-.card-t-raj p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
+/* Seção trajetória */
+.secao-trajetoria {
+  background-color: var(--cor-bege);
+  padding: 60px 30px;
 }
 
 /* ============================================================
