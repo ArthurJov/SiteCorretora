@@ -1,0 +1,381 @@
+/* ============================================================
+   === SEÇÃO DESTAQUES =======================================
+   ============================================================ */
+
+/* --- Seção container ---------------------------------------- */
+.destaques {
+  background-color: var(--cor-bege);
+  padding: 64px 20px 72px;
+}
+
+/* --- Cabeçalho da seção ------------------------------------- */
+.destaques__header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.destaques__eyebrow {
+  display: inline-block;
+  font-family: var(--fonte-corpo);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cor-teal);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.destaques__titulo {
+  font-family: var(--fonte-titulo);
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  color: var(--cor-navy);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.destaques__subtitulo {
+  font-family: var(--fonte-corpo);
+  font-size: 1rem;
+  color: var(--cor-teal);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* --- Grade de cards ----------------------------------------- */
+.destaques__grade {
+  display: grid;
+  grid-template-columns: 1fr;       /* 1 coluna no mobile */
+  gap: 24px;
+  max-width: 1160px;
+  margin: 0 auto 40px;
+}
+
+/* --- Card de imóvel ----------------------------------------- */
+.card-imovel {
+  background-color: var(--cor-branco);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(47, 65, 86, 0.09);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-imovel:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px rgba(47, 65, 86, 0.18);
+}
+
+/* Wrapper da imagem */
+.card-imovel__foto-wrap {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.card-imovel__foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.card-imovel:hover .card-imovel__foto {
+  transform: scale(1.06);
+}
+
+/* Badge de finalidade (Venda / Aluguel) */
+.card-imovel__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 100px;
+  backdrop-filter: blur(6px);
+}
+
+.card-imovel__badge--venda {
+  background-color: var(--cor-navy);
+  color: var(--cor-branco);
+}
+
+.card-imovel__badge--aluguel {
+  background-color: var(--cor-teal);
+  color: var(--cor-branco);
+}
+
+.card-imovel__badge--temporada {
+  background-color: var(--cor-ouro);
+  color: var(--cor-branco);
+}
+
+/* Preço "Sob consulta" */
+.preco-consulta {
+  font-style: italic;
+  color: var(--cor-teal);
+  font-size: 1rem;
+}
+
+/* Sufixo de período (ex: /diária, /mês) */
+.card-imovel__preco span {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--cor-teal);
+  margin-left: 2px;
+}
+
+/* Corpo do card */
+.card-imovel__corpo {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+}
+
+/* Localização */
+.card-imovel__local {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.78rem;
+  color: var(--cor-teal);
+  font-weight: 400;
+}
+
+.card-imovel__local svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* Título do imóvel */
+.card-imovel__titulo {
+  font-family: var(--fonte-corpo);
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--cor-navy);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* Preço */
+.card-imovel__preco {
+  font-family: var(--fonte-corpo);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--cor-ouro);
+  letter-spacing: -0.01em;
+}
+
+/* Linha divisória */
+.card-imovel__divisor {
+  border: none;
+  border-top: 1px solid var(--cor-sky);
+  margin: 4px 0;
+  opacity: 0.6;
+}
+
+/* Atributos (área, quartos, banheiros, vagas) */
+.card-imovel__atributos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.card-imovel__attr {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.82rem;
+  color: var(--cor-escuro);
+  opacity: 0.8;
+}
+
+.card-imovel__attr svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--cor-teal);
+}
+
+/* Botão "Ver Detalhes" */
+.card-imovel__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--cor-branco);
+  background-color: var(--cor-navy);
+  border: 2px solid var(--cor-navy);
+  border-radius: 25px;
+  padding: 12px 24px;
+  min-height: 46px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: auto;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.card-imovel__cta:hover {
+  background-color: var(--cor-teal);
+  border-color: var(--cor-teal);
+  transform: translateY(-1px);
+}
+
+.card-imovel__cta svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.card-imovel:hover .card-imovel__cta svg {
+  transform: translateX(4px);
+}
+
+/* --- Estado: carregando -------------------------------------- */
+.destaques__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 48px 0;
+  color: var(--cor-teal);
+  font-family: var(--fonte-corpo);
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.destaques__spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid var(--cor-sky);
+  border-top-color: var(--cor-teal);
+  border-radius: 50%;
+  animation: girando 0.8s linear infinite;
+}
+
+@keyframes girando {
+  to { transform: rotate(360deg); }
+}
+
+/* --- Estado: erro ------------------------------------------- */
+.destaques__erro {
+  text-align: center;
+  padding: 48px 20px;
+  color: var(--cor-teal);
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  opacity: 0.75;
+}
+
+/* --- Botão "Ver todos" --------------------------------------- */
+.destaques__rodape {
+  text-align: center;
+}
+
+.btn--ver-todos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--fonte-corpo);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--cor-navy);
+  background-color: transparent;
+  border: 2px solid var(--cor-navy);
+  border-radius: 25px;
+  padding: 13px 34px;
+  min-height: 48px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.btn--ver-todos:hover {
+  background-color: var(--cor-navy);
+  color: var(--cor-branco);
+  transform: translateY(-2px);
+}
+
+/* --- Animação de entrada dos cards -------------------------- */
+@keyframes cardEntrar {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-imovel {
+  opacity: 0;
+  animation: cardEntrar 0.5s ease forwards;
+}
+
+.card-imovel:nth-child(1) { animation-delay: 0.10s; }
+.card-imovel:nth-child(2) { animation-delay: 0.22s; }
+.card-imovel:nth-child(3) { animation-delay: 0.34s; }
+
+/* ============================================================
+   === BREAKPOINT TABLET — 640px =============================
+   ============================================================ */
+@media (min-width: 640px) {
+  .destaques {
+    padding: 72px 32px 80px;
+  }
+
+  .destaques__grade {
+    grid-template-columns: repeat(2, 1fr);   /* 2 colunas no tablet */
+  }
+}
+
+/* ============================================================
+   === BREAKPOINT DESKTOP — 1024px ===========================
+   ============================================================ */
+@media (min-width: 1024px) {
+  .destaques {
+    padding: 88px 60px 96px;
+  }
+
+  .destaques__grade {
+    grid-template-columns: repeat(3, 1fr);   /* 3 colunas no desktop */
+  }
+
+  .destaques__header {
+    margin-bottom: 52px;
+  }
+}
+
+/* ============================================================
+   === ACESSIBILIDADE — preferência de movimento reduzido ====
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .card-imovel,
+  .card-imovel__foto,
+  .destaques__spinner {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+  }
+}

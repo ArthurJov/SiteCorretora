@@ -1,0 +1,53 @@
+[
+  {
+    "id": "imovel-001",
+    "titulo": "Temporada em Barra de Serinhaém",
+    "tipo": "casa",
+    "finalidade": "temporada",
+    "preco": 690,
+    "area_m2": null,
+    "quartos": 2,
+    "banheiros": 2,
+    "vagas": 0,
+    "descricao": "Belíssimo imóvel a menos de 300 metros da praia! 2 suítes climatizadas (cama de casal + solteiro cada), sala climatizada, ambiente aconchegante e elegante. Diárias a partir de R$ 690. Não aceita pets.",
+    "fotos": ["assets/img/Imovel 1/Imovel numero 1.jpeg"],
+    "localizacao": "Barra de Serinhaém, Ituberá, BA",
+    "maps_url": "",
+    "destaque": true,
+    "wpp_msg": "Olá Juscelia! Tenho interesse no imóvel de temporada em Barra de Serinhaém (Imóvel 1). Pode me passar mais informações?"
+  },
+  {
+    "id": "imovel-002",
+    "titulo": "Complexo à Beira-Mar — 1.664 m²",
+    "tipo": "pousada",
+    "finalidade": "venda",
+    "preco": 749000,
+    "area_m2": 1664,
+    "quartos": 5,
+    "banheiros": 5,
+    "vagas": 0,
+    "descricao": "1.664 m² a apenas 80 metros da praia. 5 apartamentos climatizados, cozinha equipada, área de convivência espaçosa e pequeno galpão. Totalmente mobiliado — ideal para pousada, temporada ou moradia multifamiliar.",
+    "fotos": ["assets/img/Imovel 2/Imovel numero 2.jpeg"],
+    "localizacao": "Barra de Serinhaém, Ituberá, BA",
+    "maps_url": "",
+    "destaque": true,
+    "wpp_msg": "Olá Juscelia! Tenho interesse no Complexo à Beira-Mar de 1.664 m² (Imóvel 2). Pode me passar mais informações?"
+  },
+  {
+    "id": "imovel-003",
+    "titulo": "Vila das Marés — Pé na Areia",
+    "tipo": "villa",
+    "finalidade": "temporada",
+    "preco": 0,
+    "area_m2": null,
+    "quartos": 11,
+    "banheiros": 11,
+    "vagas": 0,
+    "descricao": "Imóvel pé na areia com 11 suítes sofisticadas, piscina, sala de jogos, máquina de gelo e câmeras de segurança. Serviços inclusos: cozinheira, arrumadeira e caseiro. Perfeito para eventos, casamentos intimistas e temporadas de luxo.",
+    "fotos": ["assets/img/imovel 3/WhatsApp Image 2026-04-01 at 00.41.19.jpeg"],
+    "localizacao": "Barra de Serinhaém, Ituberá, BA",
+    "maps_url": "",
+    "destaque": true,
+    "wpp_msg": "Olá Juscelia! Tenho interesse na Vila das Marés — Pé na Areia (Imóvel 3). Pode me passar mais informações e valores?"
+  }
+]
