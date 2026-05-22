@@ -1,71 +1,3 @@
-function startSlideshows() {
-    // Seleciona todos os containers de slideshow da página
-    const slideshows = document.querySelectorAll('.slideshow');
-
-    slideshows.forEach(container => {
-        const images = container.querySelectorAll('img');
-        let currentIndex = 0;
-
-        // Função que muda a imagem
-        setInterval(() => {
-            // Remove a classe 'active' da imagem atual
-            images[currentIndex].classList.remove('active');
-
-            // Vai para a próxima imagem (volta para 0 se for a última)
-            currentIndex = (currentIndex + 1) % images.length;
-
-            // Adiciona a classe 'active' na nova imagem
-            images[currentIndex].classList.add('active');
-        }, 8000); // 8000ms = 8 segundos
-    });
-}
-
-// Inicia a função assim que a página carregar
-window.onload = startSlideshows;
-
-
-
-
-
-// Função para mudar o slide (Manual)
-function changeSlide(button, direction) {
-    const container = button.parentElement.querySelector('.slideshow');
-    const images = container.querySelectorAll('img');
-    let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
-
-    // Remove classe atual
-    images[activeIndex].classList.remove('active');
-
-    // Calcula novo índice
-    activeIndex = (activeIndex + direction + images.length) % images.length;
-
-    // Adiciona nova classe
-    images[activeIndex].classList.add('active');
-}
-
-// Slideshow Automático
-function startAutoSlideshow() {
-    const slideshows = document.querySelectorAll('.slideshow');
-
-    slideshows.forEach(container => {
-        setInterval(() => {
-            const images = container.querySelectorAll('img');
-            let activeIndex = Array.from(images).findIndex(img => img.classList.contains('active'));
-
-            images[activeIndex].classList.remove('active');
-            activeIndex = (activeIndex + 1) % images.length;
-            images[activeIndex].classList.add('active');
-        }, 5000); // 5 segundos para não ficar muito frenético
-    });
-}
-
-window.onload = startAutoSlideshow;
-
-
-
-
-
-
 // --- LOGICA DE FILTRO E BUSCA ---
 function filtrar() {
     const inputBusca = document.getElementById('inputBusca').value.toLowerCase();
@@ -91,7 +23,7 @@ function filtrar() {
     });
 }
 
-// --- LOGICA DO SLIDESHOW (MANTIDA) ---
+// --- LOGICA DO SLIDESHOW ---
 function changeSlide(button, direction) {
     const container = button.parentElement.querySelector('.slideshow');
     const images = container.querySelectorAll('img');
@@ -118,8 +50,6 @@ function startAutoSlideshow() {
 }
 
 window.onload = startAutoSlideshow;
-
-
 
 function adicionarImovel() {
     // 1. Pega os valores dos inputs
