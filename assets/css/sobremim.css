@@ -170,6 +170,156 @@
   color: #555;
 }
 
+/*Depoimentos*/
+
+.secao-depoimentos {
+  padding: 5rem 1.5rem;
+  background-color: #f9f6f1;
+}
+
+
+.depoimentos__grade {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+}
+
+
+.dep__card {
+  flex: 0 0 calc(33.333% - 1rem);
+  background: #fff;
+  border: 1px solid #e8e0d4;
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dep__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
+
+/* --- Aspas decorativas --- */
+.dep__aspas {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  line-height: 1;
+  color: #c8a96e;
+  margin-bottom: -0.5rem;
+}
+
+/* --- Texto --- */
+.dep__texto {
+  font-family: 'Zain', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #4a4a4a;
+  flex: 1;
+  margin: 0;
+}
+
+/* --- Rodapé do card --- */
+.dep__rodape {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid #e8e0d4;
+  padding-top: 1rem;
+  margin: 0;
+}
+
+/* --- Avatar --- */
+.dep__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #c8a96e;
+  color: #fff;
+  font-family: 'Zain', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+/* --- Info --- */
+.dep__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+/* --- Estrelas --- */
+.dep__estrelas {
+  font-size: 0.8rem;
+  color: #c8a96e;
+  letter-spacing: 2px;
+}
+
+/* --- Nome --- */
+.dep__nome {
+  font-family: 'Zain', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+/* --- Localização --- */
+.dep__local {
+  font-family: 'Zain', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: #888;
+}
+
+@media (max-width: 900px) {
+  .dep__card {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .secao-depoimentos { padding: 3.5rem 1rem; }
+  .dep__card { flex: 0 0 100%; }
+  .dep__aspas { font-size: 3rem; }
+  .dep__texto { font-size: 0.95rem; }
+}
+
+/* --- Animação de entrada dos cards --- */
+@keyframes dep-surgir {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dep__card {
+  opacity: 0;
+  animation: dep-surgir 0.5s ease forwards;
+}
+
+/* Cada card surge com um atraso escalonado */
+.dep__card:nth-child(1) { animation-delay: 0.3s; }
+.dep__card:nth-child(2) { animation-delay: 0.3s; }
+.dep__card:nth-child(3) { animation-delay: 0.3s; }
+.dep__card:nth-child(4) { animation-delay: 0.4s; }
+.dep__card:nth-child(5) { animation-delay: 0.5s; }
+
 /* convocação */
 
 #convocacao {

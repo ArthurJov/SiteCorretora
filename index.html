@@ -334,6 +334,108 @@
     </div>
   </section>
 
+  <!-- ============================================================
+     === SEÇÃO DEPOIMENTOS ====================================
+     ============================================================ -->
+<section class="secao-depoimentos" id="depoimentos" aria-labelledby="depoimentos-titulo">
+
+  <div class="titulo-principal">
+    <h1 id="depoimentos-titulo">O que dizem meus clientes</h1>
+    <h3 id="depoimentos-titulo">Confira histórias reais que refletem profissionalismo e carinho</h3>
+  </div>
+  <div class="depoimentos__grade">
+
+    <!-- Card 1 -->
+    <article class="dep__card">
+      <div class="dep__aspas" aria-hidden="true">"</div>
+      <p class="dep__texto">
+        Há mais de 15 anos confio à Jucélia a administração dos meus imóveis em Pratigi.
+        Sempre atendida com profissionalismo, dedicação e transparência. Recomendo para quem
+        busca uma profissional responsável e extremamente competente.
+      </p>
+      <footer class="dep__rodape">
+        <div class="dep__avatar" aria-hidden="true">RA</div>
+        <div class="dep__info">
+          <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+          <strong class="dep__nome">Rosemary Assunção</strong>
+          <span class="dep__local">Ituberá, BA</span>
+        </div>
+      </footer>
+    </article>
+
+    <!-- Card 2 -->
+    <article class="dep__card">
+      <div class="dep__aspas" aria-hidden="true">"</div>
+      <p class="dep__texto">
+        Parceria de excelência! Jucélia é uma profissional extremamente competente, dedicada
+        e cuidadosa. De fato uma profissional diferenciada. Super indico!
+      </p>
+      <footer class="dep__rodape">
+        <div class="dep__avatar" aria-hidden="true">SB</div>
+        <div class="dep__info">
+          <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+          <strong class="dep__nome">Suzana Baiardi</strong>
+          <span class="dep__local">Ituberá, BA</span>
+        </div>
+      </footer>
+    </article>
+
+    <!-- Card 3 -->
+    <article class="dep__card">
+      <div class="dep__aspas" aria-hidden="true">"</div>
+      <p class="dep__texto">
+        Há mais de 4 anos em parceria para os aluguéis da minha Pousada. Fico tranquilo com
+        o profissionalismo dela no atendimento aos hóspedes e na condução dos contratos.
+      </p>
+      <footer class="dep__rodape">
+        <div class="dep__avatar" aria-hidden="true">CM</div>
+        <div class="dep__info">
+          <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+          <strong class="dep__nome">Crispim Mendes</strong>
+          <span class="dep__local">Pousada Vila do Desejo, Pratigi, BA</span>
+        </div>
+      </footer>
+    </article>
+
+    <!-- Card 4 -->
+    <article class="dep__card">
+      <div class="dep__aspas" aria-hidden="true">"</div>
+      <p class="dep__texto">
+        Experiência extraordinária na Fazenda Coqueirais! Jucélia é atenciosa em todos os
+        detalhes, do atendimento pelo WhatsApp até a despedida. Lugar de paz, ótima comida
+        e café da manhã espetacular!
+      </p>
+      <footer class="dep__rodape">
+        <div class="dep__avatar" aria-hidden="true">WM</div>
+        <div class="dep__info">
+          <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+          <strong class="dep__nome">Wagner Moreira</strong>
+          <span class="dep__local">Ituberá, BA</span>
+        </div>
+      </footer>
+    </article>
+
+    <!-- Card 5 -->
+    <article class="dep__card">
+      <div class="dep__aspas" aria-hidden="true">"</div>
+      <p class="dep__texto">
+        Obrigada pelo profissionalismo e amor com que cuidou da nossa família. Cada detalhe
+        foi pensado para tornar nosso descanso inesquecível. Que Deus abençoe esse trabalho ímpar!
+      </p>
+      <footer class="dep__rodape">
+        <div class="dep__avatar" aria-hidden="true">IS</div>
+        <div class="dep__info">
+          <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+          <strong class="dep__nome">Ilma Silva</strong>
+          <span class="dep__local">Fazenda Coqueirais, Ituberá, BA</span>
+        </div>
+      </footer>
+    </article>
+
+  </div><!-- /depoimentos__grade -->
+  <div class="depoimentos__grade">
+
+
 
   <!-- ============================================================
        === SEÇÃO CONVOCAÇÃO ======================================
@@ -633,6 +735,27 @@
 
     }());
   </script>
+
+ <!-- ============================================================
+       === JAVASCRIPT — SEÇÃO DEPOIMENTOS =========================
+       ============================================================ -->
+  <script>
+  const cards = document.querySelectorAll('.dep__card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  cards.forEach(card => {
+    card.style.animationPlayState = 'paused'; /* pausa até entrar na tela */
+    observer.observe(card);
+  });
+</script>
 
 </body>
 </html>
