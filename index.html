@@ -104,11 +104,20 @@
        ============================================================ -->
   <section class="hero" id="inicio" aria-label="Seção principal">
 
-    <!-- Camada de imagem de fundo (cidade.jpeg via CSS) -->
-    <div class="hero__bg" role="img" aria-label="Vista aérea da cidade de Ituberá, Bahia"></div>
+    <!-- ── Carrossel de imagens fullscreen ── -->
+    <div class="hero__carousel" aria-hidden="true">
+      <div class="hero__slide hero__slide--1"></div>
+      <div class="hero__slide hero__slide--2"></div>
+      <div class="hero__slide hero__slide--3"></div>
+      <div class="hero__slide hero__slide--4"></div>
+    </div>
 
-    <!-- Sobreposição escura -->
+    <!-- Overlay cinematográfico em camadas -->
     <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__vignette" aria-hidden="true"></div>
+
+    <!-- Linha de luz decorativa -->
+    <div class="hero__light-line" aria-hidden="true"></div>
 
     <!-- Conteúdo do hero -->
     <div class="hero__content">
@@ -306,68 +315,7 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       === SEÇÃO ÁREA DE ATUAÇÃO =================================
-       ============================================================ -->
-  <div>
-    <div class="titulo-principal">
-      <h1>Minha área de atuação</h1>
-      <div class="linha-decorativa"></div>
-    </div>
-  </div>
-  
-  <section id="area-atuacao">
-    <div class="slider">
-      <div class="slides">
-        <!-- radio buttons -->
-        <input type="radio" name="radio-btn" id="radio1">
-        <input type="radio" name="radio-btn" id="radio2">
-        <input type="radio" name="radio-btn" id="radio3">
-        <input type="radio" name="radio-btn" id="radio4">
-        <!-- fim radio buttons -->
-        <!-- slides -->
-        <div class="slide first">
-          <img src="assets/img/area_de_atuacao/barra de Serrinhaem.jpeg" Imagem da um area de atuação em Ituberá,
-            Bahia">
-        </div>
-        <div class="slide">
-          <img src="assets/img/area_de_atuacao/cidade ituberá (2).jpeg"
-            alt="Imagem da um area de atuação em Ituberá, Bahia">
-        </div>
-        <div class="slide">
-          <img src="assets/img/area_de_atuacao/cidade ituberá.jpeg"
-            alt="Imagem da um area de atuação em Ituberá, Bahia">
-        </div>
-        <div class="slide">
-          <img src="assets/img/area_de_atuacao/Praia de pratigi.jpeg"
-            alt="Imagem da um area de atuação em Ituberá, Bahia">
-        </div>
-        <!-- fim slides -->
 
-        <!-- navegação auto -->
-        <div class="navigation-auto">
-          <div class="auto-btn1"></div>
-          <div class="auto-btn2"></div>
-          <div class="auto-btn3"></div>
-          <div class="auto-btn4"></div>
-          <!-- fim navegação auto -->
-        </div>
-
-      </div>
-      <!-- manual navigation -->
-      <div class="manual-navigation">
-        <label for="radio1" class="manual-btn"></label>
-        <label for="radio2" class="manual-btn"></label>
-        <label for="radio3" class="manual-btn"></label>
-        <label for="radio4" class="manual-btn"></label>
-      </div>
-
-
-    </div>
-
-
-
-  </section>
 
 
   <!-- ============================================================
@@ -442,7 +390,7 @@
               <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <span>Ituberá, Bahia — BA</span>
+            <a href="https://www.google.com/maps/search/?api=1&query=Ituber%C3%A1%2C+Bahia%20-%20BA" class="footer__link-contato" target="_blank" rel="noopener noreferrer">Ituberá, Bahia — BA</a>
           </li>
           <li class="footer__contato-item">
             <!-- Ícone telefone -->
@@ -660,6 +608,70 @@
         })
         .then(renderizarDestaques)
         .catch(exibirErro);
+
+    }());
+  </script>
+
+  <!-- ============================================================
+       === JAVASCRIPT — CARROSSEL HERO PREMIUM ==================
+       ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      var slides     = document.querySelectorAll('.hero__slide');
+      var current    = 0;
+      var total      = slides.length;
+      var DURATION   = 6000; /* ms entre trocas */
+      var reduced    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (total <= 1) return;
+
+      /* Ativa slide de índice n */
+      function goTo(n) {
+        var prev = current;
+        current  = (n + total) % total;
+
+        /* Adiciona "leaving" ao slide anterior e remove após a transição */
+        if (prev !== current) {
+          slides[prev].classList.add('leaving');
+          slides[prev].classList.remove('active');
+          setTimeout(function () {
+            slides[prev].classList.remove('leaving');
+          }, 1600);
+        }
+
+        slides[current].classList.add('active');
+      }
+
+      /* Inicialização */
+      goTo(0);
+
+      /* Timer automático */
+      if (!reduced) {
+        setInterval(function () {
+          goTo(current + 1);
+        }, DURATION);
+      }
+
+      /* Efeito Parallax Scrolling no background */
+      var carouselContainer = document.querySelector('.hero__carousel');
+      if (!reduced && carouselContainer) {
+        var isTicking = false;
+        window.addEventListener('scroll', function () {
+          if (!isTicking) {
+            window.requestAnimationFrame(function () {
+              var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+              var heroHeight = window.innerHeight; // Hero tem 100svh
+              if (scrollY <= heroHeight) {
+                carouselContainer.style.transform = 'translate3d(0, ' + (scrollY * 0.35) + 'px, 0)';
+              }
+              isTicking = false;
+            });
+            isTicking = true;
+          }
+        }, { passive: true });
+      }
 
     }());
   </script>
