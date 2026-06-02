@@ -321,3 +321,21 @@
     padding: 20px 60px;
   }
 }
+
+/* Link administrativo discreto */
+.footer__admin-link {
+  font-size: 0.8rem;
+  color: rgba(200, 217, 230, 0.25);
+  text-decoration: none;
+  margin-left: 8px;
+  display: inline-flex;
+  align-items: center;
+  transition: color 0.2s ease, opacity 0.2s ease;
+  opacity: 0.5;
+}
+
+.footer__admin-link:hover {
+  color: var(--cor-ouro);
+  opacity: 1;
+}
+
