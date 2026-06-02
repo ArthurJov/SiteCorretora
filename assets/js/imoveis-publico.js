@@ -25,14 +25,9 @@ async function carregarImoveis() {
   const grid    = document.getElementById('catalogo-grid');
 
   try {
-    // Imóveis disponíveis ou alugados, destaques primeiro, mais recentes depois
-    const q = query(
-      collection(db, 'imoveis'),
-      where('status', '!=', 'vendido'),
-      orderBy('status'),
-      orderBy('destaque', 'desc'),
-      orderBy('criadoEm', 'desc')
-    );
+    // Busca simples de todos os imóveis para ordenar e filtrar em memória.
+    // Isso evita a necessidade de criar índices compostos complexos no painel do Firebase.
+    const q = query(collection(db, 'imoveis'));
     const snapshot = await getDocs(q);
 
     loading.style.display = 'none';
@@ -43,7 +38,37 @@ async function carregarImoveis() {
     }
 
     const imoveis = [];
-    snapshot.forEach(doc => imoveis.push({ id: doc.id, ...doc.data() }));
+    snapshot.forEach(doc => {
+      const data = doc.data();
+      // Filtrar apenas os que não estão vendidos
+      if (data.status !== 'vendido') {
+        imoveis.push({ id: doc.id, ...data });
+      }
+    });
+
+    // Ordenar em memória: destaques primeiro, depois os mais recentes
+    imoveis.sort((a, b) => {
+      // 1. Destaque (true vem antes de false)
+      const destA = a.destaque ? 1 : 0;
+      const destB = b.destaque ? 1 : 0;
+      if (destA !== destB) {
+        return destB - destA;
+      }
+
+      // 2. Data de criação (mais recente primeiro)
+      const obterTempo = (campo) => {
+        if (!campo) return 0;
+        if (typeof campo.toMillis === 'function') return campo.toMillis();
+        if (campo instanceof Date) return campo.getTime();
+        if (campo.seconds) return campo.seconds * 1000 + (campo.nanoseconds || 0) / 1000000;
+        const parsed = Date.parse(campo);
+        return isNaN(parsed) ? 0 : parsed;
+      };
+
+      const tempoA = obterTempo(a.criadoEm);
+      const tempoB = obterTempo(b.criadoEm);
+      return tempoB - tempoA;
+    });
 
     renderTodos(imoveis);
 
