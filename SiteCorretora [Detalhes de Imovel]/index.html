@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Juscelia Sousa — Corretora de Imóveis credenciada CRECI 32.781. Especialista em vendas e locações em Ituberá e região, BA. Atendimento personalizado para você encontrar o imóvel ideal." />
+  <title>Juscelia Sousa | Corretora de Imóveis — Ituberá, BA</title>
+
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Zain:ital,wght@0,200;0,300;0,400;0,700;0,800;0,900;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- Folha de estilos --->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/sobremim.css" />
+  <link rel="stylesheet" href="assets/css/destaques.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
+  <link rel="stylesheet" href="assets/css/imoveis.css"/>
+</head>
+<body>
+
+  <!-- ============================================================
+       === CABEÇALHO =============================================
+       ============================================================ -->
+  <header class="header" id="cabecalho" role="banner">
+
+    <!-- Marca / Logo -->
+    <a href="#" class="header__brand" aria-label="Juscelia Sousa - Página inicial">
+      <span class="header__name">Juscelia Sousa</span>
+      <span class="header__creci">CRECI 32.781</span>
+    </a>
+
+    <!-- Navegação desktop -->
+    <nav class="header__nav" aria-label="Navegação principal">
+      <ul class="nav__list" role="list">
+        <li>
+          <a href="#" class="nav__link active" aria-current="page">Início</a>
+        </li>
+        <li>
+          <a href="#imoveis" class="nav__link">Imóveis</a>
+        </li>
+        <li>
+          <a href="#sobre" class="nav__link">Sobre</a>
+        </li>
+        <li>
+          <!-- Botão WhatsApp — mensagem: contato geral pelo site -->
+          <a
+            href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+im%C3%B3veis."
+            class="btn--whatsapp-nav"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Fale com Juscelia Sousa pelo WhatsApp"
+          >
+            <!-- Ícone SVG do WhatsApp -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Botão hambúrguer (mobile) -->
+    <button
+      class="header__hamburger"
+      id="btn-hamburger"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="menu-mobile"
+    >
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+      <span class="hamburger__line"></span>
+    </button>
+
+  </header><!-- /cabeçalho -->
+
+
+  <!-- ============================================================
+       === MENU MOBILE ===========================================
+       ============================================================ -->
+  <nav
+    class="mobile-menu"
+    id="menu-mobile"
+    aria-label="Menu mobile"
+    aria-hidden="true"
+  >
+    <div class="mobile-menu__inner">
+      <a href="#"        class="mobile-menu__link active" aria-current="page" data-link-mobile>Início</a>
+      <a href="#imoveis" class="mobile-menu__link" data-link-mobile>Imóveis</a>
+      <a href="#sobre"   class="mobile-menu__link" data-link-mobile>Sobre</a>
+      <!-- Botão WhatsApp mobile — mensagem: contato pelo menu -->
+      <a
+        href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+im%C3%B3veis."
+        class="mobile-menu__whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fale com Juscelia Sousa pelo WhatsApp"
+        data-link-mobile
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        Fale no WhatsApp
+      </a>
+    </div>
+  </nav><!-- /menu-mobile -->
+
+
+  <!-- ============================================================
+       === SEÇÃO HERO ============================================
+       ============================================================ -->
+  <section class="hero" id="inicio" aria-label="Seção principal">
+
+    <!-- Camada de imagem de fundo (cidade.jpeg via CSS) -->
+    <div
+      class="hero__bg"
+      role="img"
+      aria-label="Vista aérea da cidade de Ituberá, Bahia"
+    ></div>
+
+    <!-- Sobreposição escura -->
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <!-- Conteúdo do hero -->
+    <div class="hero__content">
+
+      <!-- 1. Tag de localização -->
+      <span class="hero__tag" aria-label="Localização: Ituberá, Bahia">
+        Corretora de Imóveis &bull; Ituberá, BA
+      </span>
+
+      <!-- 2. Título principal -->
+      <h1 class="hero__title">
+        Encontre o imóvel ideal para você
+      </h1>
+
+      <!-- 3. Subtítulo -->
+      <p class="hero__subtitle">
+        Especialista em vendas e locações em Ituberá e região. Atendimento personalizado com quem entende do mercado local.
+      </p>
+
+      <!-- 4. Botões de ação -->
+      <div class="hero__actions">
+        <a
+          href="#imoveis"
+          class="btn btn--primary"
+          aria-label="Ver os imóveis disponíveis"
+        >
+          Ver Imóveis
+        </a>
+        <!-- Botão WhatsApp hero — mensagem: interesse em compra ou aluguel -->
+        <a
+          href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+tenho+interesse+em+comprar+ou+alugar+um+im%C3%B3vel+em+Ituber%C3%A1.+Pode+me+ajudar%3F"
+          class="btn btn--outline"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Falar com Juscelia Sousa pelo WhatsApp"
+        >
+          <!-- Ícone WhatsApp embutido -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px;margin-right:8px;flex-shrink:0;" aria-hidden="true" focusable="false">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Fale no WhatsApp
+        </a>
+      </div>
+
+    </div><!-- /conteúdo-hero -->
+
+    <!-- 5. Indicador de rolagem -->
+    <div class="hero__scroll-hint" aria-hidden="true">
+      <span>Rolar</span>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+
+  </section><!-- /hero -->
+
+
+  <!-- ============================================================
+       === SEÇÃO DESTAQUES =======================================
+       ============================================================ -->
+  <section class="destaques" id="imoveis" aria-labelledby="destaques-titulo">
+
+    <!-- Cabeçalho da seção -->
+    <div class="destaques__header">
+      <span class="destaques__eyebrow" aria-hidden="true">Oportunidades selecionadas</span>
+      <h2 class="destaques__titulo" id="destaques-titulo">Imóveis em Destaque</h2>
+      <p class="destaques__subtitulo">Confira as melhores oportunidades selecionadas para você em Ituberá e região.</p>
+    </div>
+
+    <!-- Grade de cards (preenchida via JS) -->
+    <div
+      class="destaques__grade"
+      id="destaques-grade"
+      role="list"
+      aria-label="Imóveis em destaque"
+      aria-live="polite"
+    >
+      <!-- Estado inicial: carregando -->
+      <div class="destaques__loading" id="destaques-loading" aria-label="Carregando imóveis">
+        <div class="destaques__spinner" role="status"></div>
+        <span>Carregando imóveis...</span>
+      </div>
+    </div>
+
+    <!-- Rodapé com link para portfólio completo -->
+    <div class="destaques__rodape">
+      <a
+        href="imoveis.html"
+        class="btn--ver-todos"
+        aria-label="Ver todos os imóveis disponíveis"
+      >
+        Imóveis <span class="btn-chevron" aria-hidden="true"></span>
+      </a>
+    </div>
+
+  </section><!-- /destaques -->
+
+
+  <!-- ============================================================
+       === SEÇÃO SOBRE MIM =======================================
+       ============================================================ -->
+
+  <!-- sobre mim -->
+  <section class="color">
+    <div id="sobre">
+
+      <div class="foto">
+        <img src="./assets/img/FotoSRJusceliaSemFundo.png" alt="foto juscelia">
+      </div>
+
+      <aside class="sobremim">
+        <h1 class="great-vibes-regular">Juscelia Sousa</h1>
+        <h5>CRECI 32.781 - Corretora de Imóveis</h5>
+
+        <p>Olá! Me chamo Juscelia Carvalho de Sousa, conhecida profissionalmente como Juscelia Sousa, Corretora
+          de Imóveis registrada no CRECI 32.781.
+        </p>
+
+        <p>Sou formada em Economia pela Universidade Estadual de Santa Cruz (UESC), o que me proporciona uma
+          visão estratégica e segura para orientar meus clientes nas melhores decisões imobiliárias.
+        </p>
+
+        <p>
+          Atuo como Gestora Imobiliária da Fazenda Coqueirais, localizada na belíssima Praia de Pratigi, em
+          Ituberá/BA um dos destinos mais procurados da região.
+        </p>
+
+        <div class="sobre-especialidades" role="list" aria-label="Especialidades da corretora">
+          <span class="esp-tag" role="listitem">🏡 Venda Residencial</span>
+          <span class="esp-tag" role="listitem">🔑 Locação</span>
+          <span class="esp-tag" role="listitem">💎 Alto Padrão</span>
+          <span class="esp-tag" role="listitem">🏢 Médio Padrão</span>
+          <span class="esp-tag" role="listitem">🛋️ Padrão Regular</span>
+          <span class="esp-tag" role="listitem">🚪 Imóveis Populares</span>
+          <span class="esp-tag" role="listitem">🗺️ Terrenos</span>
+          <span class="esp-tag" role="listitem">🏖️ Imóveis de Praia</span>
+          <span class="esp-tag" role="listitem">🧳 Locações temporárias</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       === SEÇÃO TRAJETÓRIA ======================================
+       ============================================================ -->
+  <section class="secao-trajetoria">
+    <div class="titulo-principal">
+      <h1>Uma trajetória consolidada</h1>
+      <div class="linha-decorativa"></div>
+    </div>
+
+    <div id="trajetoria">
+      <div class="card-traj">
+        <div class="icon">🤝</div>
+        <h3>Compromisso</h3>
+        <p>Mesmo que o imóvel ideal não esteja em minha carteira, utilizo meu forte networking para encontrar a
+          melhor solução para você. A união gera resultados!</p>
+      </div>
+
+      <div class="card-traj">
+        <div class="icon">💼</div>
+        <h3>Experiência</h3>
+        <p>Com mais de 10 anos de experiência em locações temporárias, ofereço um atendimento dedicado,
+          transparente e focado em identificar as melhores oportunidades.</p>
+      </div>
+
+      <div class="card-traj">
+        <div class="icon">🎯</div>
+        <h3>Objetivo</h3>
+        <p>Meu objetivo é tornar todo o processo de compra, venda ou locação simples, seguro e tranquilo,
+          proporcionando uma experiência positiva do início ao fim.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       === SEÇÃO MISSÃO ==========================================
+       ============================================================ -->
+  <section>
+    <div class="titulo-principal">
+      <h1>O que guia meu trabalho</h1>
+      <div class="linha-decorativa"></div>
+    </div>
+    <div class="color">
+      <div id="missao">
+        <div class="card-guia">
+          <div class="icon">🔍</div>
+          <h3>Transparência</h3>
+          <p>Você sempre vai saber exatamente o que está acontecendo em cada etapa da negociação. Sem
+            surpresas, sem letras miúdas escondidas.</p>
+        </div>
+
+        <div class="card-guia">
+          <div class="icon">⭐</div>
+          <h3>Dedicação</h3>
+          <p>Cada cliente recebe atenção exclusiva. Ouço suas necessidades, estudo o mercado e me dedico
+            totalmente até encontrar o que você procura.</p>
+        </div>
+
+        <div class="card-guia">
+          <div class="icon">⚖️</div>
+          <h3>Ética Profissional</h3>
+          <p>Registro CRECI ativo e atuação sempre dentro da lei. Sua segurança jurídica é minha prioridade e
+            minha reputação não tem preço.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       === SEÇÃO CONVOCAÇÃO ======================================
+       ============================================================ -->
+  <div id="convocacao">
+    <div>
+      <div class="titulo-principal">
+        <h1>Vamos conversar?</h1>
+      </div>
+      <div>
+        <p>Entre em contato agora pelo WhatsApp e vamos encontrar juntos o imóvel perfeito para você e sua família.</p>
+      </div>
+    </div>
+    <div class="container-ctas">
+      <a href="imoveis.html" class="btn btn-portfolio" id="cta-ver-imoveis">Ver Portfólio</a>
+
+      <button class="btn btn-wpp" id="sobre-cta-wpp">
+        <img src="assets/img/whatsapp-svgrepo-com.svg" alt="whatsapp icon" class="wpp-icon">
+        Falar no WhatsApp
+      </button>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       === RODAPÉ ================================================
+       ============================================================ -->
+  <footer class="footer" id="rodape" role="contentinfo">
+
+    <!-- Linha superior decorativa -->
+    <div class="footer__top-bar" aria-hidden="true"></div>
+
+    <div class="footer__container">
+
+      <!-- Coluna 1: Marca -->
+      <div class="footer__col footer__col--marca">
+        <a href="#" class="footer__logo" aria-label="Juscelia Sousa - Início">
+          <span class="footer__logo-nome">Juscelia Sousa</span>
+          <span class="footer__logo-creci">CRECI 32.781</span>
+        </a>
+        <p class="footer__descricao">
+          Corretora de Imóveis especialista em Ituberá e região, BA.
+          Atendimento personalizado para você encontrar o imóvel ideal.
+        </p>
+        <!-- Selos / Badges -->
+        <div class="footer__selos">
+          <span class="footer__selo">CRECI Ativo</span>
+          <span class="footer__selo">+10 anos de experiência</span>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Navegação -->
+      <div class="footer__col">
+        <h3 class="footer__col-titulo">Navegação</h3>
+        <ul class="footer__nav-list" role="list">
+          <li><a href="#inicio"   class="footer__nav-link">Início</a></li>
+          <li><a href="#imoveis" class="footer__nav-link">Imóveis</a></li>
+          <li><a href="#sobre"   class="footer__nav-link">Sobre mim</a></li>
+          <li><a href="imoveis.html" class="footer__nav-link">Portfólio completo</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Contato -->
+      <div class="footer__col">
+        <h3 class="footer__col-titulo">Contato</h3>
+        <ul class="footer__contato-list" role="list">
+          <li class="footer__contato-item">
+            <!-- Ícone localização -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            <span>Ituberá, Bahia — BA</span>
+          </li>
+          <li class="footer__contato-item">
+            <!-- Ícone telefone -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3-8.6A2 2 0 0 1 3.62 1.2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11l-1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            <a href="tel:+5573981028102" class="footer__link-contato">(73) 98102-8102</a>
+          </li>
+          <li class="footer__contato-item">
+            <!-- Ícone WhatsApp -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <a
+              href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+              class="footer__link-contato"
+              target="_blank"
+              rel="noopener noreferrer"
+            >WhatsApp</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: CTA final -->
+      <div class="footer__col footer__col--cta">
+        <h3 class="footer__col-titulo">Vamos conversar?</h3>
+        <p class="footer__cta-texto">Entre em contato agora e encontre o imóvel perfeito para você.</p>
+        <a
+          href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+          class="footer__btn-wpp"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Fale com Juscelia Sousa pelo WhatsApp"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          Falar no WhatsApp
+        </a>
+      </div>
+
+    </div><!-- /footer__container -->
+
+    <!-- Barra de copyright -->
+    <div class="footer__copyright">
+      <p>
+        &copy; <span id="footer-ano"></span> Juscelia Sousa — CRECI 32.781.
+        Todos os direitos reservados.
+      </p>
+      <p class="footer__credito">
+        Desenvolvido por
+        <strong>Arthur Vieira</strong>,
+        <strong>Fernanda Pereira</strong>,
+        <strong>Filipe de Jesus</strong>,
+        <strong>Lucas Figueiredo</strong>,
+        <strong>Arthur Carvalho</strong>,
+        <strong>Alexandro Junior</strong> e
+        <strong>Pedro Yenzo</strong>
+        &mdash; UNIJORGE, Salvador, BA
+      </p>
+    </div>
+
+  </footer><!-- /rodape -->
+
+
+  <!-- ============================================================
+       === BOTÃO FLUTUANTE WHATSAPP ==============================
+       ============================================================ -->
+  <a
+    href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+    class="btn-wpp-flutuante"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Fale com Juscelia Sousa pelo WhatsApp"
+    title="Fale no WhatsApp"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a><!-- /botão-flutuante-whatsapp -->
+
+  <!-- ============================================================
+       === JAVASCRIPT EXTERNO ====================================
+       ============================================================ -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Ano dinâmico no footer -->
+  <script>
+    document.getElementById('footer-ano').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- ============================================================
+       === JAVASCRIPT — SEÇÃO DESTAQUES =========================
+       ============================================================ -->
+  <script>
+    /* === SEÇÃO DESTAQUES === */
+    (function () {
+      'use strict';
+
+      /* Formata preço conforme finalidade */
+      function formatarPreco(preco, finalidade) {
+        if (!preco || preco === 0) {
+          return '<span class="preco-consulta">Sob consulta</span>';
+        }
+        var valor = preco.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL',
+          minimumFractionDigits: 0,
+          maximumFractionDigits: 0
+        });
+        if (finalidade === 'aluguel')   return valor + '<span>/mês</span>';
+        if (finalidade === 'temporada') return 'A partir de ' + valor + '<span>/diária</span>';
+        return valor;
+      }
+
+      /* Retorna SVG inline de ícone por nome */
+      function icone(nome) {
+        var icones = {
+          area: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>',
+          quartos: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20v-5a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v5"/><path d="M3 15h18"/></svg>',
+          banheiros: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16"/><path d="M4 12a8 8 0 0 0 16 0"/><path d="M7 12V6a5 5 0 0 1 10 0v6"/><circle cx="7" cy="6" r="1"/></svg>',
+          vagas: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-4 0v2"/><path d="M8 7V5a2 2 0 0 0-4 0v2"/></svg>',
+          local: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+          seta: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>'
+        };
+        return icones[nome] || '';
+      }
+
+      /* Monta o HTML de um card de imóvel */
+      function criarCardHTML(imovel) {
+        var labelMap = {
+          venda: 'Venda',
+          aluguel: 'Aluguel',
+          temporada: 'Temporada'
+        };
+        var classeMap = {
+          venda: 'card-imovel__badge card-imovel__badge--venda',
+          aluguel: 'card-imovel__badge card-imovel__badge--aluguel',
+          temporada: 'card-imovel__badge card-imovel__badge--temporada'
+        };
+        var labelBadge = labelMap[imovel.finalidade] || 'Venda';
+        var classeBadge = classeMap[imovel.finalidade] || 'card-imovel__badge card-imovel__badge--venda';
+
+        var attrVagas = imovel.vagas > 0
+          ? '<span class="card-imovel__attr">' + icone('vagas') + imovel.vagas + ' vaga' + (imovel.vagas > 1 ? 's' : '') + '</span>'
+          : '';
+
+        return [
+          '<article class="card-imovel" role="listitem" data-id="' + imovel.id + '">',
+          '  <div class="card-imovel__foto-wrap">',
+          '    <img',
+          '      class="card-imovel__foto"',
+          '      src="' + imovel.fotos[0] + '"',
+          '      alt="Foto de ' + imovel.titulo + '"',
+          '      loading="lazy"',
+          '      decoding="async"',
+          '    />',
+
+          '  </div>',
+          '  <div class="card-imovel__corpo">',
+          '    <p class="card-imovel__local">' + icone('local') + imovel.localizacao + '</p>',
+          '    <h3 class="card-imovel__titulo">' + imovel.titulo + '</h3>',
+          '    <p class="card-imovel__preco">' + formatarPreco(imovel.preco, imovel.finalidade) + '</p>',
+          '    <hr class="card-imovel__divisor" aria-hidden="true" />',
+          '    <div class="card-imovel__atributos">',
+          imovel.area_m2 ? '      <span class="card-imovel__attr">' + icone('area') + imovel.area_m2 + ' m²</span>' : '',
+          '      <span class="card-imovel__attr">' + icone('quartos') + imovel.quartos + ' suíte' + (imovel.quartos > 1 ? 's' : '') + '</span>',
+          '      <span class="card-imovel__attr">' + icone('banheiros') + imovel.banheiros + ' banheiro' + (imovel.banheiros > 1 ? 's' : '') + '</span>',
+          '      ' + attrVagas,
+          '    </div>',
+          '    <button',
+          '      class="card-imovel__cta"',
+          '      type="button"',
+          '      aria-label="Ver detalhes: ' + imovel.titulo + '"',
+          '    >',
+          '      Ver Detalhes',
+          '      ' + icone('seta'),
+          '    </button>',
+          '  </div>',
+          '</article>'
+        ].join('\n');
+      }
+
+      /* Renderiza os cards de destaque na grade */
+      function renderizarDestaques(imoveis) {
+        var grade = document.getElementById('destaques-grade');
+        var loading = document.getElementById('destaques-loading');
+
+        if (!grade) return;
+
+        /* Filtra apenas destaque: true, limita em 3 */
+        var destaques = imoveis
+          .filter(function (im) { return im.destaque === true; })
+          .slice(0, 3);
+
+        /* Remove o estado de carregamento */
+        if (loading) loading.remove();
+
+        if (destaques.length === 0) {
+          grade.innerHTML = '<p class="destaques__erro">Nenhum imóvel em destaque no momento.</p>';
+          return;
+        }
+
+        grade.innerHTML = destaques.map(criarCardHTML).join('');
+      }
+
+      /* Exibe mensagem de erro na grade */
+      function exibirErro() {
+        var grade = document.getElementById('destaques-grade');
+        var loading = document.getElementById('destaques-loading');
+        if (loading) loading.remove();
+        if (grade) {
+          grade.innerHTML = '<p class="destaques__erro">Não foi possível carregar os imóveis. Tente novamente mais tarde.</p>';
+        }
+      }
+
+      /* Carrega o JSON e dispara a renderização */
+      fetch('data/imoveis.json')
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(renderizarDestaques)
+        .catch(exibirErro);
+
+    }());
+  </script>
+
+</body>
+</html>
