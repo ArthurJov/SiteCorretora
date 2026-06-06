@@ -187,17 +187,7 @@
       </svg>
     </div>
 
-    <!-- 6. Setas de navegação do carrossel -->
-    <button
-      class="hero__arrow hero__arrow--prev"
-      id="hero-prev"
-      aria-label="Slide anterior"
-    >&#10094;</button>
-    <button
-      class="hero__arrow hero__arrow--next"
-      id="hero-next"
-      aria-label="Próximo slide"
-    >&#10095;</button>
+
 
   </section><!-- /hero -->
 
@@ -836,33 +826,14 @@
       /* Efeito Parallax Scrolling no background */
       var carouselContainer = document.querySelector('.hero__carousel');
       
-      /* Lógica dos Botões de Navegação */
-      var btnPrev = document.getElementById('hero-prev');
-      var btnNext = document.getElementById('hero-next');
       var autoPlayInterval;
-
+      
       function startAutoPlay() {
         if (!reduced) {
           autoPlayInterval = setInterval(function () {
             goTo(current + 1);
           }, DURATION);
         }
-      }
-
-      function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        startAutoPlay();
-      }
-
-      if (btnPrev && btnNext) {
-        btnPrev.addEventListener('click', function() {
-          goTo(current - 1);
-          resetAutoPlay();
-        });
-        btnNext.addEventListener('click', function() {
-          goTo(current + 1);
-          resetAutoPlay();
-        });
       }
 
       /* Inicialização do Carrossel Automático */
