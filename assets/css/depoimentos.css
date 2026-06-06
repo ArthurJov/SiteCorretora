@@ -1,0 +1,302 @@
+/* --- Depoimentos --- */
+.secao-depoimentos {
+  padding: 3rem 1.5rem 5rem;
+  background-color: #f9f6f1;
+}
+
+.depoimentos__grade {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 2.5rem auto 0;
+}
+
+.dep__card {
+  flex: 0 0 calc(33.333% - 1rem);
+  background: #fff;
+  border: 1px solid #e8e0d4;
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  /* Animação de entrada */
+  opacity: 0;
+  animation: dep-surgir 0.5s ease forwards;
+  animation-play-state: paused;
+}
+
+.dep__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+}
+
+/* Atraso escalonado por card */
+.dep__card:nth-child(1) { animation-delay: 0.1s; }
+.dep__card:nth-child(2) { animation-delay: 0.2s; }
+.dep__card:nth-child(3) { animation-delay: 0.3s; }
+.dep__card:nth-child(4) { animation-delay: 0.4s; }
+.dep__card:nth-child(5) { animation-delay: 0.5s; }
+
+/* --- Animação de surgimento --- */
+@keyframes dep-surgir {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* --- Aspas decorativas --- */
+.dep__aspas {
+  font-family: 'Great Vibes', cursive;
+  font-size: 4rem;
+  line-height: 1;
+  color: #c8a96e;
+  margin-bottom: -0.5rem;
+}
+
+/* --- Texto do depoimento --- */
+.dep__texto {
+  font-family: 'Zain', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.75;
+  color: #4a4a4a;
+  flex: 1;
+  margin: 0;
+}
+
+/* --- Rodapé do card --- */
+.dep__rodape {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border-top: 1px solid #e8e0d4;
+  padding-top: 1rem;
+  margin: 0;
+}
+
+/* --- Avatar com iniciais --- */
+.dep__avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #c8a96e;
+  color: #fff;
+  font-family: 'Zain', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+
+/* --- Bloco de nome e local --- */
+.dep__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+/* --- Estrelas --- */
+.dep__estrelas {
+  font-size: 0.8rem;
+  color: #c8a96e;
+  letter-spacing: 2px;
+}
+
+/* --- Nome do cliente --- */
+.dep__nome {
+  font-family: 'Zain', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #2c2c2c;
+}
+
+/* --- Localização --- */
+.dep__local {
+  font-family: 'Zain', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: #888;
+}
+
+/* --- Hero --- */
+.dep-hero {
+  background-color: #1e3a4a;
+  padding: 7rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.dep-hero__eyebrow {
+  display: inline-block;
+  font-family: 'Zain', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c8a96e;
+  margin-bottom: 0.75rem;
+}
+
+.dep-hero__titulo {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #fff;
+  margin: 0 0 1rem;
+  line-height: 1.2;
+}
+
+.dep-hero__subtitulo {
+  font-family: 'Zain', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 520px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* --- Estatísticas --- */
+.dep-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 2.5rem 1.5rem;
+  background-color: #f0ebe3;
+  border-bottom: 1px solid #e0d6c8;
+}
+
+.dep-stat {
+  text-align: center;
+}
+
+.dep-stat__num {
+  font-family: 'Zain', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #c8a96e;
+  display: block;
+  line-height: 1;
+}
+
+.dep-stat__label {
+  font-family: 'Zain', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --- Breadcrumb --- */
+.dep-breadcrumb {
+  padding: 1rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: 'Zain', sans-serif;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.dep-breadcrumb a {
+  color: #c8a96e;
+  text-decoration: none;
+}
+
+.dep-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* --- Convocação --- */
+.dep-cta {
+  background-color: #f9f6f1;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.dep-cta__titulo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  color: #1e3a4a;
+  margin: 0 0 0.75rem;
+}
+
+.dep-cta__texto {
+  font-family: 'Zain', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #1e3a4a;
+  margin: 0 0 2rem;
+}
+
+.dep-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background-color: #25d366;
+  color: #fff;
+  font-family: 'Zain', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 0.9rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.dep-cta__btn:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE
+   ============================================================ */
+
+/* Tablet: 2 colunas */
+@media (max-width: 900px) {
+  .dep__card {
+    flex: 0 0 calc(50% - 0.75rem);
+  }
+}
+
+/* Mobile: 1 coluna */
+@media (max-width: 600px) {
+  .secao-depoimentos {
+    padding: 3.5rem 1rem 4rem;
+  }
+
+  .dep__card {
+    flex: 0 0 100%;
+  }
+
+  .dep__aspas {
+    font-size: 3rem;
+  }
+
+  .dep__texto {
+    font-size: 0.95rem;
+  }
+
+  .dep-hero {
+    padding: 6rem 1rem 3rem;
+  }
+
+  .dep-stats {
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+}

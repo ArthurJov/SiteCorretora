@@ -500,9 +500,12 @@
   <!-- ============================================================
        === JAVASCRIPT — SEÇÃO DESTAQUES =========================
        ============================================================ -->
-  <script>
+  <script type="module">
+    import { db } from './assets/js/firebase-config.js';
+    import { collection, getDocs, query, where, limit } from "https://www.gstatic.com/firebasejs/12.14.0/firebase-firestore.js";
+
     /* === SEÇÃO DESTAQUES === */
-    (function () {
+    (async function () {
       'use strict';
 
       /* Formata preço conforme finalidade */
@@ -552,18 +555,19 @@
         var attrVagas = imovel.vagas > 0
           ? '<span class="card-imovel__attr">' + icone('vagas') + imovel.vagas + ' vaga' + (imovel.vagas > 1 ? 's' : '') + '</span>'
           : '';
+        
+        var fotoSrc = (imovel.fotos && imovel.fotos.length > 0) ? imovel.fotos[0] : 'assets/img/placeholder.jpg';
 
         return [
           '<article class="card-imovel" role="listitem" data-id="' + imovel.id + '">',
           '  <div class="card-imovel__foto-wrap">',
           '    <img',
           '      class="card-imovel__foto"',
-          '      src="' + imovel.fotos[0] + '"',
+          '      src="' + fotoSrc + '"',
           '      alt="Foto de ' + imovel.titulo + '"',
           '      loading="lazy"',
           '      decoding="async"',
           '    />',
-
           '  </div>',
           '  <div class="card-imovel__corpo">',
           '    <p class="card-imovel__local">' + icone('local') + imovel.localizacao + '</p>',
@@ -576,14 +580,14 @@
           '      <span class="card-imovel__attr">' + icone('banheiros') + imovel.banheiros + ' banheiro' + (imovel.banheiros > 1 ? 's' : '') + '</span>',
           '      ' + attrVagas,
           '    </div>',
-          '    <button',
+          '    <a',
           '      class="card-imovel__cta"',
-          '      type="button"',
+          '      href="detalhes-imovel.html?id=' + imovel.id + '"',
           '      aria-label="Ver detalhes: ' + imovel.titulo + '"',
           '    >',
           '      Ver Detalhes',
           '      ' + icone('seta'),
-          '    </button>',
+          '    </a>',
           '  </div>',
           '</article>'
         ].join('\n');
@@ -596,24 +600,18 @@
 
         if (!grade) return;
 
-        /* Filtra apenas destaque: true, limita em 3 */
-        var destaques = imoveis
-          .filter(function (im) { return im.destaque === true; })
-          .slice(0, 3);
-
-        /* Remove o estado de carregamento */
         if (loading) loading.remove();
 
-        if (destaques.length === 0) {
+        if (imoveis.length === 0) {
           grade.innerHTML = '<p class="destaques__erro">Nenhum imóvel em destaque no momento.</p>';
           return;
         }
 
-        grade.innerHTML = destaques.map(criarCardHTML).join('');
+        grade.innerHTML = imoveis.map(criarCardHTML).join('');
       }
 
-      /* Exibe mensagem de erro na grade */
-      function exibirErro() {
+      function exibirErro(err) {
+        console.error(err);
         var grade = document.getElementById('destaques-grade');
         var loading = document.getElementById('destaques-loading');
         if (loading) loading.remove();
@@ -622,7 +620,22 @@
         }
       }
 
-      /* Carrega o JSON e dispara a renderização */
+      try {
+        const q = query(collection(db, 'imoveis'), where('destaque', '==', true), limit(3));
+        const snapshot = await getDocs(q);
+        const imoveis = [];
+        snapshot.forEach(doc => {
+          if(doc.data().status !== 'vendido') {
+            imoveis.push({ id: doc.id, ...doc.data() });
+          }
+        });
+        renderizarDestaques(imoveis);
+      } catch (err) {
+        exibirErro(err);
+      }
+
+    }());
+  </script>*/
       fetch('data/imoveis.json')
         .then(function (res) {
           if (!res.ok) throw new Error('HTTP ' + res.status);
