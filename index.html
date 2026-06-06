@@ -708,7 +708,7 @@
           '    <button class="card-imovel__nav card-imovel__nav--next" onclick="event.stopPropagation(); changeSlide(this,1)" aria-label="Próxima foto">&#10095;</button>' : '';
 
         return [
-          '<article class="card-imovel" role="listitem" data-id="' + imovel.id + '">',
+          '<article class="card-imovel" role="listitem" data-id="' + imovel.id + '" onclick="window.location.href=\'detalhes-imovel.html?id=' + imovel.id + '\'" style="cursor: pointer;">',
           '  <div class="card-imovel__foto-wrap">',
           '    <div class="card-imovel__slideshow">',
           '      ' + slidesHTML,

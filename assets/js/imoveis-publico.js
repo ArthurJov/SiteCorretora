@@ -145,7 +145,7 @@ function renderCard(imovel) {
   ].filter(Boolean).join('');
 
   return `
-    <article class="card-imovel" role="listitem" data-id="${imovel.id}" data-tipo="${imovel.tipo || ''}" data-finalidade="${imovel.finalidade || ''}">
+    <article class="card-imovel" role="listitem" data-id="${imovel.id}" data-tipo="${imovel.tipo || ''}" data-finalidade="${imovel.finalidade || ''}" onclick="window.location.href='detalhes-imovel.html?id=${imovel.id}'" style="cursor: pointer;">
       <div class="card-imovel__foto-wrap">
         <div class="card-imovel__slideshow">
           ${slidesHTML}
