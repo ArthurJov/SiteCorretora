@@ -2,6 +2,7 @@
   font-family: "Great Vibes", cursive;
   font-weight: 400;
   font-style: normal;
+  font-size: clamp(3.5rem, 2vw, 5rem);
 }
 
 /* cor de fundo das seções alternadas */
@@ -87,9 +88,10 @@
     padding-top: 3rem;
 }
 
-.titulo-principal h1 {
+.titulo-principal h1,
+.titulo-principal h2 {
     font-family: var(--fonte-corpo);
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 800;
     color: var(--cor-navy);
     margin-bottom: 12px;
@@ -181,10 +183,13 @@
     text-align: center;
 }
 
-#convocacao h1 {
+#convocacao h1,
+#convocacao h2,
+#convocacao .titulo-principal h1,
+#convocacao .titulo-principal h2 {
     font-family: var(--fonte-corpo);
     font-weight: 800;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
     color: var(--cor-navy);
     margin-bottom: 20px;
     line-height: 1.2;

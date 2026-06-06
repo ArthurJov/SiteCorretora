@@ -336,14 +336,14 @@ body {
 
 /* Zoom centralizado com aceleração 3D para evitar tremores (1.015 a 1.05) */
 @keyframes kenBurns {
-  0%   { transform: scale3d(1.015, 1.015, 1) translate3d(0, 0, 0); }
-  100% { transform: scale3d(1.05, 1.05, 1) translate3d(0, 0, 0); }
+  0%   { transform: scale3d(1, 1, 1) translate3d(0, 0, 0); }
+  100% { transform: scale3d(1, 1, 1) translate3d(0, 0, 0); }
 }
 
 /* Mantém o zoom acelerado por hardware durante o fade out */
 @keyframes kenBurnsOut {
-  from { opacity: 1; transform: scale3d(1.05, 1.05, 1) translate3d(0, 0, 0); }
-  to   { opacity: 0; transform: scale3d(1.05, 1.05, 1) translate3d(0, 0, 0); }
+  from { opacity: 1; transform: scale3d(1, 1, 1) translate3d(0, 0, 0); }
+  to   { opacity: 0; transform: scale3d(1, 1, 1) translate3d(0, 0, 0); }
 }
 
 /* Imagens individuais (background via CSS) */

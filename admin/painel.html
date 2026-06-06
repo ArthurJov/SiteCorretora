@@ -134,6 +134,7 @@
           <div class="form-grupo">
             <label for="campo-preco">Preço (R$) *</label>
             <input type="number" id="campo-preco" name="preco" min="0" required
+              onkeydown="if(event.key==='-') event.preventDefault();"
               placeholder="Ex: 350000">
           </div>
 
@@ -141,25 +142,26 @@
           <div class="form-grupo">
             <label for="campo-area">Área (m²)</label>
             <input type="number" id="campo-area" name="area_m2" min="0"
+              onkeydown="if(event.key==='-') event.preventDefault();"
               placeholder="Ex: 200">
           </div>
 
           <!-- Quartos -->
           <div class="form-grupo">
             <label for="campo-quartos">Quartos</label>
-            <input type="number" id="campo-quartos" name="quartos" min="0" value="0">
+            <input type="number" id="campo-quartos" name="quartos" min="0" value="0" onkeydown="if(event.key==='-') event.preventDefault();">
           </div>
 
           <!-- Banheiros -->
           <div class="form-grupo">
             <label for="campo-banheiros">Banheiros</label>
-            <input type="number" id="campo-banheiros" name="banheiros" min="0" value="0">
+            <input type="number" id="campo-banheiros" name="banheiros" min="0" value="0" onkeydown="if(event.key==='-') event.preventDefault();">
           </div>
 
           <!-- Vagas -->
           <div class="form-grupo">
             <label for="campo-vagas">Vagas de garagem</label>
-            <input type="number" id="campo-vagas" name="vagas" min="0" value="0">
+            <input type="number" id="campo-vagas" name="vagas" min="0" value="0" onkeydown="if(event.key==='-') event.preventDefault();">
           </div>
 
           <!-- Localização -->

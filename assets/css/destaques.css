@@ -429,28 +429,26 @@
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background: rgba(255, 255, 255, 0.82);
-  color: var(--cor-navy);
+  background: transparent;
+  color: var(--cor-branco);
   border: none;
   width: 34px;
   height: 34px;
-  border-radius: 50%;
-  font-size: 14px;
+  font-size: 24px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0.85;
-  transition: opacity 0.25s ease, background-color 0.25s ease, transform 0.25s ease;
-  backdrop-filter: blur(4px);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
 }
 
-.card-imovel__nav--prev { left: 10px; }
-.card-imovel__nav--next { right: 10px; }
+.card-imovel__nav--prev { left: 5px; }
+.card-imovel__nav--next { right: 5px; }
 
 .card-imovel__nav:hover {
-  background: var(--cor-branco);
+  background: transparent;
   opacity: 1;
   transform: translateY(-50%) scale(1.1);
 }
