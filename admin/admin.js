@@ -403,6 +403,16 @@ document.getElementById('form-imovel').addEventListener('submit', async (e) => {
   try {
     const dados = coletarDadosFormulario(e.target);
 
+    if (dados.destaque) {
+      const destaquesAtuais = imoveisCache.filter(i => i.destaque && i.id !== modoEdicaoId).length;
+      if (destaquesAtuais >= 3) {
+        mostrarToast('Limite atingido: você só pode ter no máximo 3 imóveis em destaque.', 'erro');
+        btn.disabled = false;
+        btn.textContent = modoEdicaoId ? 'Salvar alterações' : 'Salvar imóvel';
+        return;
+      }
+    }
+
     if (modoEdicaoId) {
       await editarImovel(modoEdicaoId, dados);
       mostrarToast('Imóvel atualizado com sucesso! ✓', 'sucesso');
