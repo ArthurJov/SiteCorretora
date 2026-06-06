@@ -1,0 +1,100 @@
+[
+  {
+    "id": "imovel-001",
+    "titulo": "Temporada em Barra de Serinhaém",
+    "tipo": "casa",
+    "finalidade": "temporada",
+    "preco": 10,
+    "area_m2": null,
+    "quartos": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "descricao": "(Colocar aqui a descrição)",
+    "fotos": [
+      "assets/img/Imovel 1/Imovel numero 1.jpeg",
+      "assets/img/Imovel 1/imovel 1.1.jpeg",
+      "assets/img/Imovel 1/imovel 1.3.jpeg",
+      "assets/img/Imovel 1/imovel 1.4.jpeg",
+      "assets/img/Imovel 1/imovel 1.5.jpeg"
+    ],
+    "localizacao": "Barra de Serinhaém, Ituberá, BA",
+    "maps_url": "",
+    "destaque": true,
+    "wpp_msg": "Olá Juscelia! Tenho interesse no imóvel de temporada em Barra de Serinhaém."
+  },
+  {
+    "id": "imovel-002",
+    "titulo": "Complexo à Beira-Mar",
+    "tipo": "pousada",
+    "finalidade": "venda",
+    "preco": 0,
+    "area_m2": null,
+    "quartos": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "descricao": "(Colocar aqui a descrição)",
+    "fotos": [
+      "assets/img/Imovel 2/Imovel numero 2.jpeg",
+      "assets/img/Imovel 2/imovel 2.1.jpeg",
+      "assets/img/Imovel 2/imovel 2.2.jpeg",
+      "assets/img/Imovel 2/imovel 2.3.jpeg",
+      "assets/img/Imovel 2/imovel 2.4.jpeg"
+    ],
+    "localizacao": "Barra de Serinhaém, Ituberá, BA",
+    "maps_url": "",
+    "destaque": true,
+    "wpp_msg": "Olá Juscelia! Tenho interesse no Complexo à Beira-Mar."
+  },
+  {
+    "id": "imovel-003",
+    "titulo": "Vila das Marés — Pé na Areia",
+    "tipo": "villa",
+    "finalidade": "temporada",
+    "preco": 0,
+    "area_m2": null,
+    "quartos": 0,
+    "banheiros": 0,
+    "vagas": 0,
+    "descricao": "(Colocar aqui a descrição)",
+    "fotos": [
+      "assets/img/Imovel 3/WhatsApp Image 2026-04-01 at 00.41.19.jpeg",
+      "assets/img/Imovel 3/imovel 3.1.jpeg",
+      "assets/img/Imovel 3/imovel 3.2.jpeg",
+      "assets/img/Imovel 3/imovel 3.3.jpeg",
+      "assets/img/Imovel 3/imovel 3.4.jpeg",
+      "assets/img/Imovel 3/imovel 3.5.jpeg",
+      "assets/img/Imovel 3/imovel 3.6.jpeg",
+      "assets/img/Imovel 3/imovel 3.7.jpeg"
+    ],
+    "localizacao": "Vila das Marés, Barra de Serinhaém",
+    "maps_url": "",
+    "destaque": true,
+    "wpp_msg": "Olá Juscelia! Tenho interesse na Vila das Marés — Pé na Areia."
+  },
+  {
+    "id": "imovel-004",
+    "titulo": "Imóvel Porteira Fechada Automatizado",
+    "tipo": "casa",
+    "finalidade": "venda",
+    "preco": 300000,
+    "area_m2": 125,
+    "quartos": 2,
+    "banheiros": 2,
+    "vagas": 0,
+    "descricao": "(Colocar aqui a descrição completa do imóvel)",
+    "fotos": [
+      "assets/img/Imovel 4/imovel 4.1.jpeg",
+      "assets/img/Imovel 4/imovel 4.2.jpeg",
+      "assets/img/Imovel 4/imovel 4.3.jpeg",
+      "assets/img/Imovel 4/imovel 4.4.jpeg",
+      "assets/img/Imovel 4/imovel 4.5.jpeg",
+      "assets/img/Imovel 4/imovel 4.6.jpeg",
+      "assets/img/Imovel 4/imovel 4.7.jpeg",
+      "assets/img/Imovel 4/imovel 4.8.jpeg"
+    ],
+    "localizacao": "Praia de Pratigi, BA",
+    "maps_url": "",
+    "destaque": true,
+    "wpp_msg": "Olá Juscelia! Tenho interesse no Imóvel Porteira Fechada Automatizado."
+  }
+]
