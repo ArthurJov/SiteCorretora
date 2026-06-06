@@ -30,7 +30,8 @@ async function carregarImoveis() {
     const q = query(collection(db, 'imoveis'));
     const snapshot = await getDocs(q);
 
-    loading.style.display = 'none';
+    if (loading) loading.style.display = 'none';
+    if (!grid) return;
 
     if (snapshot.empty) {
       grid.innerHTML = '<p class="catalogo-vazio">Nenhum imóvel disponível no momento. Entre em contato pelo WhatsApp!</p>';

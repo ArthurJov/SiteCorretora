@@ -310,13 +310,16 @@ body {
 }
 
 .catalogo-container {
-    display: grid;
-    /* Aumentado o tamanho mínimo do card de 320px para 380px */
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
-    gap: 30px;
-    max-width: 1400px; /* Aumentado de 1200px para 1400px */
+    max-width: 1200px; /* Retornado para 1200px para nao ocupar a tela inteira */
     margin: 0 auto 60px auto;
     padding: 0 20px;
+}
+
+.catalogo-grid-wrapper {
+    display: grid;
+    /* Reduzido o tamanho mínimo do card para ficar mais compacto e funcional */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
 }
 
 /* --- O Card --- */
@@ -515,7 +518,7 @@ body {
     }
 
     /* Faz os cards ocuparem 100% da largura em telas menores */
-    .catalogo-container {
+    .catalogo-grid-wrapper {
         grid-template-columns: 1fr;
         gap: 20px;
     }

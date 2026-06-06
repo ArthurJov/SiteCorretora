@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
@@ -17,6 +17,7 @@
   <link rel="stylesheet" href="assets/css/destaques.css" />
   <link rel="stylesheet" href="assets/css/footer.css" />
   <link rel="stylesheet" href="assets/css/imoveis.css"/>
+  <link rel="stylesheet" href="assets/css/depoimentos.css" />
 </head>
 <body>
 
@@ -26,7 +27,7 @@
   <header class="header" id="cabecalho" role="banner">
 
     <!-- Marca / Logo -->
-    <a href="#" class="header__brand" aria-label="Juscelia Sousa - Página inicial">
+    <a href="index.html" class="header__brand" aria-label="Juscelia Sousa - Página inicial">
       <span class="header__name">Juscelia Sousa</span>
       <span class="header__creci">CRECI 32.781</span>
     </a>
@@ -42,6 +43,9 @@
         </li>
         <li>
           <a href="#sobre" class="nav__link">Sobre</a>
+        </li>
+        <li>
+          <a href="#depoimentos" class="nav__link">Depoimentos</a>
         </li>
         <li>
           <!-- Botão WhatsApp — mensagem: contato geral pelo site -->
@@ -91,6 +95,7 @@
       <a href="#"        class="mobile-menu__link active" aria-current="page" data-link-mobile>Início</a>
       <a href="#imoveis" class="mobile-menu__link" data-link-mobile>Imóveis</a>
       <a href="#sobre"   class="mobile-menu__link" data-link-mobile>Sobre</a>
+      <a href="#depoimentos" class="mobile-menu__link" data-link-mobile>Depoimentos</a>
       <!-- Botão WhatsApp mobile — mensagem: contato pelo menu -->
       <a
         href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es+sobre+im%C3%B3veis."
@@ -114,15 +119,20 @@
        ============================================================ -->
   <section class="hero" id="inicio" aria-label="Seção principal">
 
-    <!-- Camada de imagem de fundo (cidade.jpeg via CSS) -->
-    <div
-      class="hero__bg"
-      role="img"
-      aria-label="Vista aérea da cidade de Ituberá, Bahia"
-    ></div>
+    <!-- ── Carrossel de imagens fullscreen ── -->
+    <div class="hero__carousel" aria-hidden="true">
+      <div class="hero__slide hero__slide--1"></div>
+      <div class="hero__slide hero__slide--2"></div>
+      <div class="hero__slide hero__slide--3"></div>
+      <div class="hero__slide hero__slide--4"></div>
+    </div>
 
-    <!-- Sobreposição escura -->
+    <!-- Overlay cinematográfico em camadas -->
     <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__vignette" aria-hidden="true"></div>
+    
+    <!-- Linha de luz decorativa -->
+    <div class="hero__light-line" aria-hidden="true"></div>
 
     <!-- Conteúdo do hero -->
     <div class="hero__content">
@@ -234,7 +244,7 @@
       </div>
 
       <aside class="sobremim">
-        <h1 class="great-vibes-regular">Juscelia Sousa</h1>
+        <h2 class="great-vibes-regular">Juscelia Sousa</h2>
         <h5>CRECI 32.781 - Corretora de Imóveis</h5>
 
         <p>Olá! Me chamo Juscelia Carvalho de Sousa, conhecida profissionalmente como Juscelia Sousa, Corretora
@@ -271,7 +281,7 @@
        ============================================================ -->
   <section class="secao-trajetoria">
     <div class="titulo-principal">
-      <h1>Uma trajetória consolidada</h1>
+      <h2>Uma trajetória consolidada</h2>
       <div class="linha-decorativa"></div>
     </div>
 
@@ -305,7 +315,7 @@
        ============================================================ -->
   <section>
     <div class="titulo-principal">
-      <h1>O que guia meu trabalho</h1>
+      <h2>O que guia meu trabalho</h2>
       <div class="linha-decorativa"></div>
     </div>
     <div class="color">
@@ -336,12 +346,113 @@
 
 
   <!-- ============================================================
+     === SEÇÃO DEPOIMENTOS ====================================
+     ============================================================ -->
+  <section class="secao-depoimentos" id="depoimentos" aria-labelledby="depoimentos-titulo">
+
+    <div class="titulo-principal">
+      <h2 id="depoimentos-titulo">O que dizem meus clientes</h2>
+      <h3>Confira histórias reais que refletem profissionalismo e carinho</h3>
+    </div>
+    <div class="depoimentos__grade">
+
+      <!-- Card 1 -->
+      <article class="dep__card">
+        <div class="dep__aspas" aria-hidden="true">"</div>
+        <p class="dep__texto">
+          Há mais de 15 anos confio à Jucélia a administração dos meus imóveis em Pratigi.
+          Sempre atendida com profissionalismo, dedicação e transparência. Recomendo para quem
+          busca uma profissional responsável e extremamente competente.
+        </p>
+        <footer class="dep__rodape">
+          <div class="dep__avatar" aria-hidden="true">RA</div>
+          <div class="dep__info">
+            <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <strong class="dep__nome">Rosemary Assunção</strong>
+            <span class="dep__local">Ituberá, BA</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="dep__card">
+        <div class="dep__aspas" aria-hidden="true">"</div>
+        <p class="dep__texto">
+          Parceria de excelência! Jucélia é uma profissional extremamente competente, dedicada
+          e cuidadosa. De fato uma profissional diferenciada. Super indico!
+        </p>
+        <footer class="dep__rodape">
+          <div class="dep__avatar" aria-hidden="true">SB</div>
+          <div class="dep__info">
+            <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <strong class="dep__nome">Suzana Baiardi</strong>
+            <span class="dep__local">Ituberá, BA</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="dep__card">
+        <div class="dep__aspas" aria-hidden="true">"</div>
+        <p class="dep__texto">
+          Há mais de 4 anos em parceria para os aluguéis da minha Pousada. Fico tranquilo com
+          o profissionalismo dela no atendimento aos hóspedes e na condução dos contratos.
+        </p>
+        <footer class="dep__rodape">
+          <div class="dep__avatar" aria-hidden="true">CM</div>
+          <div class="dep__info">
+            <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <strong class="dep__nome">Crispim Mendes</strong>
+            <span class="dep__local">Pousada Vila do Desejo, Pratigi, BA</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="dep__card">
+        <div class="dep__aspas" aria-hidden="true">"</div>
+        <p class="dep__texto">
+          Experiência extraordinária na Fazenda Coqueirais! Jucélia é atenciosa em todos os
+          detalhes, do atendimento pelo WhatsApp até a despedida. Lugar de paz, ótima comida
+          e café da manhã espetacular!
+        </p>
+        <footer class="dep__rodape">
+          <div class="dep__avatar" aria-hidden="true">WM</div>
+          <div class="dep__info">
+            <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <strong class="dep__nome">Wagner Moreira</strong>
+            <span class="dep__local">Ituberá, BA</span>
+          </div>
+        </footer>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="dep__card">
+        <div class="dep__aspas" aria-hidden="true">"</div>
+        <p class="dep__texto">
+          Obrigada pelo profissionalismo e amor com que cuidou da nossa família. Cada detalhe
+          foi pensado para tornar nosso descanso inesquecível. Que Deus abençoe esse trabalho ímpar!
+        </p>
+        <footer class="dep__rodape">
+          <div class="dep__avatar" aria-hidden="true">IS</div>
+          <div class="dep__info">
+            <div class="dep__estrelas" aria-label="5 estrelas">★★★★★</div>
+            <strong class="dep__nome">Ilma Silva</strong>
+            <span class="dep__local">Fazenda Coqueirais, Ituberá, BA</span>
+          </div>
+        </footer>
+      </article>
+
+    </div><!-- /depoimentos__grade -->
+  </section>
+
+  <!-- ============================================================
        === SEÇÃO CONVOCAÇÃO ======================================
        ============================================================ -->
   <div id="convocacao">
     <div>
       <div class="titulo-principal">
-        <h1>Vamos conversar?</h1>
+        <h2>Vamos conversar?</h2>
       </div>
       <div>
         <p>Entre em contato agora pelo WhatsApp e vamos encontrar juntos o imóvel perfeito para você e sua família.</p>
@@ -350,10 +461,17 @@
     <div class="container-ctas">
       <a href="imoveis.html" class="btn btn-portfolio" id="cta-ver-imoveis">Ver Portfólio</a>
 
-      <button class="btn btn-wpp" id="sobre-cta-wpp">
+      <a
+        href="https://wa.me/5573981028102?text=Ol%C3%A1%2C+Juscelia!+Vim+pelo+seu+site+e+gostaria+de+mais+informa%C3%A7%C3%B5es."
+        class="btn btn-wpp"
+        id="sobre-cta-wpp"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Fale com Juscelia Sousa pelo WhatsApp"
+      >
         <img src="assets/img/whatsapp-svgrepo-com.svg" alt="whatsapp icon" class="wpp-icon">
         Falar no WhatsApp
-      </button>
+      </a>
     </div>
   </div>
 
@@ -370,7 +488,7 @@
 
       <!-- Coluna 1: Marca -->
       <div class="footer__col footer__col--marca">
-        <a href="#" class="footer__logo" aria-label="Juscelia Sousa - Início">
+        <a href="index.html" class="footer__logo" aria-label="Juscelia Sousa - Início">
           <span class="footer__logo-nome">Juscelia Sousa</span>
           <span class="footer__logo-creci">CRECI 32.781</span>
         </a>
@@ -454,6 +572,7 @@
       <p>
         &copy; <span id="footer-ano"></span> Juscelia Sousa — CRECI 32.781.
         Todos os direitos reservados.
+        <a href="admin/index.html" class="footer__admin-link" aria-label="Painel Administrativo" title="Painel Administrativo">&#128274;</a>
       </p>
       <p class="footer__credito">
         Desenvolvido por
@@ -490,11 +609,31 @@
   <!-- ============================================================
        === JAVASCRIPT EXTERNO ====================================
        ============================================================ -->
+  <!-- Main JS -->
   <script src="assets/js/main.js" defer></script>
 
   <!-- Ano dinâmico no footer -->
   <script>
     document.getElementById('footer-ano').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- ===========================================================================
+  JAVA SCRIPT - ANIMAÇÃO DOS CARDS DEPOIMENTOS
+  =============================================================================-->
+  <script>
+    const cardsDep = document.querySelectorAll('.dep__card');
+    const observerDep = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animationPlayState = 'running';
+          observerDep.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    cardsDep.forEach(card => {
+      card.style.animationPlayState = 'paused';
+      observerDep.observe(card);
+    });
   </script>
 
   <!-- ============================================================
@@ -635,14 +774,68 @@
       }
 
     }());
-  </script>*/
-      fetch('data/imoveis.json')
-        .then(function (res) {
-          if (!res.ok) throw new Error('HTTP ' + res.status);
-          return res.json();
-        })
-        .then(renderizarDestaques)
-        .catch(exibirErro);
+  </script>
+
+  <!-- ============================================================
+       === JAVASCRIPT — CARROSSEL HERO PREMIUM ==================
+       ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      var slides     = document.querySelectorAll('.hero__slide');
+      var current    = 0;
+      var total      = slides.length;
+      var DURATION   = 6000; /* ms entre trocas */
+      var reduced    = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      if (total <= 1) return;
+
+      /* Ativa slide de índice n */
+      function goTo(n) {
+        var prev = current;
+        current  = (n + total) % total;
+
+        /* Adiciona "leaving" ao slide anterior e remove após a transição */
+        if (prev !== current) {
+          slides[prev].classList.add('leaving');
+          slides[prev].classList.remove('active');
+          setTimeout(function () {
+            slides[prev].classList.remove('leaving');
+          }, 1600);
+        }
+
+        slides[current].classList.add('active');
+      }
+
+      /* Inicialização */
+      goTo(0);
+
+      /* Timer automático */
+      if (!reduced) {
+        setInterval(function () {
+          goTo(current + 1);
+        }, DURATION);
+      }
+
+      /* Efeito Parallax Scrolling no background */
+      var carouselContainer = document.querySelector('.hero__carousel');
+      if (!reduced && carouselContainer) {
+        var isTicking = false;
+        window.addEventListener('scroll', function () {
+          if (!isTicking) {
+            window.requestAnimationFrame(function () {
+              var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+              var heroHeight = window.innerHeight; // Hero tem 100svh
+              if (scrollY <= heroHeight) {
+                carouselContainer.style.transform = 'translate3d(0, ' + (scrollY * 0.35) + 'px, 0)';
+              }
+              isTicking = false;
+            });
+            isTicking = true;
+          }
+        }, { passive: true });
+      }
 
     }());
   </script>

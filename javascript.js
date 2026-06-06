@@ -84,7 +84,7 @@ window.adicionarImovel = function adicionarImovel() {
     novoCard.classList.add('card-imovel');
     novoCard.setAttribute('data-tipo', tipo);
 
-    novoCard.innerHTML = \<div class="imagem-container"><div class="slideshow"><img src="" class="active"></div><span class="coracao-icon">??</span></div><div class="detalhes-imovel"><p class="tipo-local"> ∑ </p><p class="titulo-imovel"></p><div class="preco-container"><p class="preco-total">Total: <strong>Sob Consulta</strong></p></div></div>\;
+    novoCard.innerHTML = `<div class="imagem-container"><div class="slideshow"><img src="" class="active"></div><span class="coracao-icon">ü§ç</span></div><div class="detalhes-imovel"><p class="tipo-local"> ? </p><p class="titulo-imovel"></p><div class="preco-container"><p class="preco-total">Total: <strong>Sob Consulta</strong></p></div></div>`;
 
     catalogo.appendChild(novoCard);
     document.getElementById('novoTitulo').value = '';

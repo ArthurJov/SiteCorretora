@@ -295,28 +295,119 @@ body {
   overflow: hidden;
 }
 
-/* Imagem de fundo */
-.hero__bg {
+/* ─── Container dos slides ─── */
+.hero__carousel {
+  position: absolute;
+  top: -120px;
+  height: calc(100% + 240px);
+  left: 0;
+  right: 0;
+  z-index: 0;
+  will-change: transform;
+}
+
+/* Cada slide: ocupa toda a área, oculto por padrão */
+.hero__slide {
   position: absolute;
   inset: 0;
-  background-image: url('../img/cidade.jpeg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 0;
+  opacity: 0;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: opacity 1.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Sobreposição gradiente */
+/* Slide ativo: visível + Ken Burns sutil, linear e centralizado */
+.hero__slide.active {
+  opacity: 1;
+  animation: kenBurns 9s linear both;
+}
+
+/* Slide saindo: dissolve suavemente */
+.hero__slide.leaving {
+  opacity: 0;
+  animation: kenBurnsOut 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Zoom centralizado com aceleração 3D para evitar tremores (1.015 a 1.05) */
+@keyframes kenBurns {
+  0%   { transform: scale3d(1.015, 1.015, 1) translate3d(0, 0, 0); }
+  100% { transform: scale3d(1.05, 1.05, 1) translate3d(0, 0, 0); }
+}
+
+/* Mantém o zoom acelerado por hardware durante o fade out */
+@keyframes kenBurnsOut {
+  from { opacity: 1; transform: scale3d(1.05, 1.05, 1) translate3d(0, 0, 0); }
+  to   { opacity: 0; transform: scale3d(1.05, 1.05, 1) translate3d(0, 0, 0); }
+}
+
+/* Imagens individuais (background via CSS) */
+.hero__slide--1 {
+  background-image: url('../img/area_de_atuacao/barra de Serrinhaem.jpeg');
+  background-position: center 40%;
+}
+.hero__slide--2 {
+  background-image: url('../img/area_de_atuacao/cidade ituberá (2).jpeg');
+  background-position: center 55%;
+}
+.hero__slide--3 {
+  background-image: url('../img/area_de_atuacao/cidade ituberá.jpeg');
+  background-position: center 50%;
+}
+.hero__slide--4 {
+  background-image: url('../img/area_de_atuacao/Praia de pratigi.jpeg');
+  background-position: center 35%;
+}
+
+/* ─── Overlay cinematográfico em camadas ─── */
+/* Camada 1: gradiente escuro lateral + base escura */
 .hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(47, 65, 86, 0.65) 0%,
-    rgba(47, 65, 86, 0.55) 60%,
-    rgba(47, 65, 86, 0.70) 100%
-  );
   z-index: 1;
+  background:
+    linear-gradient(
+      160deg,
+      rgba(15, 25, 38, 0.72) 0%,
+      rgba(20, 35, 55, 0.52) 40%,
+      rgba(10, 20, 35, 0.65) 100%
+    );
+}
+
+/* Camada 2: vinheta nas bordas (efeito cinema) */
+.hero__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(5, 10, 20, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* Camada 3: linha de luz horizontal sutil (efeito lux) */
+.hero__light-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 3;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(200, 217, 230, 0.4) 30%,
+    rgba(200, 217, 230, 0.7) 50%,
+    rgba(200, 217, 230, 0.4) 70%,
+    transparent 100%
+  );
 }
 
 /* Contêiner do conteúdo */
