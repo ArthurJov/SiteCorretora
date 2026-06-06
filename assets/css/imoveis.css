@@ -23,16 +23,16 @@ body {
    === VARIÁVEIS CSS =========================================
    ============================================================ */
 :root {
-  --cor-navy:   #2F4156; /* cabeçalhos, CTAs, textos principais */
+ --cor-navy:   #2F4156; /* cabeçalhos, CTAs, textos principais */
   --cor-teal:   #567C8D; /* elementos secundários, hover        */
-  --cor-sky:    #e6c8e5; /* destaques suaves, tags              */
+  --cor-sky:    #C8D9E6; /* destaques suaves, tags              */
   --cor-bege:   #F5EFEB; /* fundos de seções                    */
   --cor-branco: #FFFFFF; /* fundos de cards e navbar            */
   --cor-escuro: #1E2D3D; /* corpo de texto                      */
   --cor-ouro:   #8C7038; /* CRECI e detalhes dourados           */
 
-  --fonte-titulo: 'Arial', cursive;
-  --fonte-corpo:  'Arial', sans-serif;
+  --fonte-titulo: 'Great Vibes', cursive;
+  --fonte-corpo:  'Zain', sans-serif;
 
   --altura-cabecalho: 72px;
   --transicao-base: all 0.3s ease;
@@ -210,11 +210,19 @@ body {
 }
 
 :root {
-    --azul-claro: #C8D9E6;
-    --azul-escuro: #2F4156;
-    --teal: #567C8D;
-    --bege: #F5EFEB;
-    --branco: #FFFFFF;
+     --cor-navy:   #2F4156; /* cabeçalhos, CTAs, textos principais */
+  --cor-teal:   #567C8D; /* elementos secundários, hover        */
+  --cor-sky:    #C8D9E6; /* destaques suaves, tags              */
+  --cor-bege:   #F5EFEB; /* fundos de seções                    */
+  --cor-branco: #FFFFFF; /* fundos de cards e navbar            */
+  --cor-escuro: #1E2D3D; /* corpo de texto                      */
+  --cor-ouro:   #8C7038; /* CRECI e detalhes dourados           */
+
+  --fonte-titulo: 'Great Vibes', cursive;
+  --fonte-corpo:  'Zain', sans-serif;
+
+  --altura-cabecalho: 72px;
+  --transicao-base: all 0.3s ease;
 }
 
 body {
@@ -265,88 +273,76 @@ body {
     cursor: pointer;
 }
 
-/* CATALOGO - ABAIXO DA NAV */
-.catalogo-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 450px); 
-    gap: 30px;
-    max-width: 2000px;
-    margin: 40px auto;
-    padding: 0 20px;
-    justify-content: center;
+/* ============================================================
+   === CATÁLOGO DE IMÓVEIS (AJUSTADO) =========================
+   ============================================================ */
+body {
+    background-color: var(--cor-bege);
 }
 
-/* CARD ESTILO QUADRADO */
+.filtros-container {
+    max-width: 1400px; /* Aumentado para acompanhar o catálogo */
+    margin: 120px auto 20px auto;
+    display: flex;
+    gap: 15px;
+    padding: 0 20px;
+}
+
+#inputBusca {
+    flex: 2;
+    padding: 14px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-sky);
+    outline: none;
+    font-size: 16px;
+    background-color: var(--cor-branco);
+}
+
+#filtroTipo {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: 8px;
+    border: 1px solid var(--cor-sky);
+    background: var(--cor-branco);
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--cor-escuro);
+}
+
+.catalogo-container {
+    display: grid;
+    /* Aumentado o tamanho mínimo do card de 320px para 380px */
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); 
+    gap: 30px;
+    max-width: 1400px; /* Aumentado de 1200px para 1400px */
+    margin: 0 auto 60px auto;
+    padding: 0 20px;
+}
+
+/* --- O Card --- */
 .card-imovel {
-    background-color: var(--branco);
+    background-color: var(--cor-branco); 
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid var(--azul-claro);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card-imovel:hover {
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
+/* --- Container de Imagem --- */
 .imagem-container {
     width: 100%;
-    aspect-ratio: 1 / 1.1; /* Formato quase quadrado */
+    /* Alterado de 16/10 para 4/3 para deixar a imagem mais alta e maior */
+    aspect-ratio: 4 / 3; 
     position: relative;
-}
-
-.imagem-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.coracao-icon {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: white;
-    padding: 5px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-.detalhes-imovel { padding: 15px; }
-
-.tipo-local { font-size: 13px; font-weight: 800; color: var(--teal); margin-bottom: 5px; }
-
-.titulo-imovel {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--azul-escuro);
-    margin-bottom: 10px;
-    height: 40px; /* Altura fixa para alinhar os cards */
     overflow: hidden;
 }
-
-.preco-container {
-    border-top: 1px solid var(--bege);
-    padding-top: 10px;
-    margin-top: 10px;
-}
-
-.preco-total strong { font-size: 18px; color: var(--azul-escuro); }
-
-.parcelamento {
-    display: inline-block;
-    background: var(--azul-claro);
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-size: 12px;
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-
-
-
 
 .slideshow {
     width: 100%;
@@ -362,191 +358,174 @@ body {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.8s ease-in-out; /* Efeito de fade suave */
+    transition: opacity 0.8s ease-in-out;
 }
 
 .slideshow img.active {
     opacity: 1;
-    position: relative; /* A imagem ativa define o espaço */
+    position: relative; 
 }
 
-
-
-
-
-
-/* Estilo das setinhas */
+/* Setas do slideshow */
 .nav-btn {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
-    color: var(--azul-escuro);
+    background: rgba(255, 255, 255, 0.8);
+    color: var(--cor-navy);
     border: none;
-    padding: 10px 14px;
-    cursor: pointer;
-    font-size: 18px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 10;
-    transition: background 0.3s;
-    opacity: 0; /* Começam escondidas */
+    opacity: 0; 
+    transition: opacity 0.3s ease, background 0.3s ease;
 }
 
 .card-imovel:hover .nav-btn {
-    opacity: 1; /* Aparecem no hover do card */
+    opacity: 1;
 }
 
 .nav-btn:hover {
-    background: var(--branco);
+    background: var(--cor-branco);
 }
 
 .prev { left: 10px; }
 .next { right: 10px; }
 
-/* Garante que o slideshow não quebre com os botões */
-.imagem-container {
-    position: relative;
-    overflow: hidden;
-}
-
-
-
-
-
-
-
-
-
-.filtros-container {
-    max-width: 1200px;
-    margin: 20px auto;
+/* --- Detalhes do Imóvel (Textos) --- */
+.detalhes-imovel { 
+    padding: 24px; 
     display: flex;
-    gap: 15px;
-    padding: 0 20px;
+    flex-direction: column;
+    flex-grow: 1; 
 }
 
-#inputBusca {
-    flex: 2;
-    padding: 12px 20px;
-    border-radius: 8px;
-    border: 1px solid var(--azul-claro);
-    outline: none;
-    font-size: 16px;
+.tipo-local { 
+    display: flex;
+    align-items: center;
+    font-size: 13px; 
+    font-weight: 500; 
+    color: #64748B; 
+    margin-bottom: 12px; 
 }
 
-#filtroTipo {
-    flex: 1;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid var(--azul-claro);
-    background: white;
-    cursor: pointer;
+.tipo-local svg {
+    color: #94A3B8;
+}
+
+.titulo-imovel {
+    font-family: var(--fonte-corpo);
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--cor-navy);
+    margin-bottom: 12px;
+    line-height: 1.2;
+}
+
+.preco-container {
+    margin-bottom: 16px;
+}
+
+.preco-total { 
+    font-size: 22px; 
+    font-weight: 800;
+    color: var(--cor-ouro); 
+}
+
+.preco-diaria {
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748B;
+    margin-left: 4px;
+}
+
+/* Linha divisória */
+.card-divisor {
+    border: 0;
+    height: 1px;
+    background-color: #E2E8F0;
+    margin: 16px 0;
+}
+
+/* Ícones de características */
+.card-infos {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os ícones quebrem linha se a tela for pequena */
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.card-infos span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748B;
+    font-weight: 500;
+}
+
+.card-infos svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* --- Botão Ver Detalhes --- */
+.btn-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: var(--cor-navy);
+    color: var(--cor-branco);
+    text-decoration: none;
     font-weight: 600;
-    color: var(--azul-escuro);
+    padding: 14px;
+    border-radius: 25px; 
+    margin-top: auto; 
+    transition: background-color 0.3s ease;
 }
 
-/* Efeito para quando o item sumir */
+.btn-card:hover {
+    background-color: var(--cor-teal);
+}
+
 .card-imovel.hidden {
     display: none;
 }
 
-/* ── Loading state ─────────────────────────────────────────── */
-.catalogo-loading {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
-    padding: 60px 20px;
-    color: var(--teal);
-    font-size: 15px;
+/* ============================================================
+   === RESPONSIVIDADE (CELULARES E TABLETS) ===================
+   ============================================================ */
+
+@media (max-width: 768px) {
+    /* Ajusta a barra de pesquisa para ficar em coluna no celular */
+    .filtros-container {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    #inputBusca, #filtroTipo {
+        width: 100%;
+    }
+
+    /* Faz os cards ocuparem 100% da largura em telas menores */
+    .catalogo-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Mantém as setas visíveis no celular, já que não tem mouse para fazer "hover" */
+    .nav-btn {
+        opacity: 1;
+        background: rgba(255, 255, 255, 0.9);
+    }
 }
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-.loading-spinner {
-    width: 40px;
-    height: 40px;
-    border: 3px solid var(--azul-claro);
-    border-top-color: var(--teal);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-}
-
-/* ── Grid wrapper (inside .catalogo-container) ─────────────── */
-.catalogo-grid-wrapper {
-    display: contents; /* inherits the parent grid */
-}
-
-/* ── Empty state ───────────────────────────────────────────── */
-.catalogo-vazio {
-    grid-column: 1 / -1;
-    text-align: center;
-    color: var(--teal);
-    font-size: 15px;
-    padding: 40px 20px;
-}
-
-/* ── Badge de status no card público ──────────────────────── */
-.badge-status {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.03em;
-    z-index: 5;
-}
-.badge-vendido { background: rgba(192, 57, 43, 0.9); color: #fff; }
-.badge-alugado { background: rgba(133, 100, 4, 0.9);  color: #fff; }
-
-/* ── Botão "Tenho interesse" nos cards ────────────────────── */
-.btn-interesse {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 12px;
-    width: 100%;
-    padding: 10px 16px;
-    background-color: var(--azul-escuro);
-    color: #fff;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background-color 0.25s ease, transform 0.2s ease;
-}
-.btn-interesse:hover {
-    background-color: var(--teal);
-    transform: translateY(-1px);
-}
-
-
-
-
-.admin-container {
-    background: white;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 1200px;
-    border-radius: 12px;
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-
-
-
-
-
-
-
 
 
 
