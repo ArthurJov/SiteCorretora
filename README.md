@@ -1,115 +1,48 @@
-# 🏡 Juscelia Sousa — Site Profissional de Corretora de Imóveis
+<div align="center">
+  
+  # 🏡 Juscelia Sousa | Corretora de Imóveis
 
-[![Status](https://img.shields.io/badge/status-em%20desenvolvimento-yellow?style=flat-square)](https://github.com)
-[![Versão](https://img.shields.io/badge/versão-MVP%20v1.0-blue?style=flat-square)](https://github.com)
-[![Natureza](https://img.shields.io/badge/natureza-acadêmico-purple?style=flat-square)](https://github.com)
-[![Stack](https://img.shields.io/badge/stack-HTML%20%2B%20CSS%20%2B%20JS-orange?style=flat-square)](https://github.com)
-[![Foco](https://img.shields.io/badge/foco-mobile--first-green?style=flat-square)](https://github.com)
+  **O endereço certo para quem busca segurança, agilidade e os melhores imóveis da região.**
 
-> Site profissional de apresentação para a corretora de imóveis **Juscelia Sousa** (CRECI 32.781), desenvolvido como projeto acadêmico no **Centro Universitário Jorge Amado (UNIJORGE)**, Salvador, BA.
+  <br>
 
----
+  [![Acessar o Site](https://img.shields.io/badge/🌍_Acessar_o_Site-Clique_Aqui-2ea44f?style=for-the-badge&logo=googlechrome)](https://arthurjov.github.io/SiteCorretora)
 
-## 📋 Sobre o Projeto
+  <br>
 
-| Campo         | Informação                                                  |
-|---------------|-------------------------------------------------------------|
-| **Cliente**   | Juscelia Sousa — Corretora autônoma, CRECI 32.781           |
-| **Cidade**    | Ituberá, Bahia                                              |
-| **Natureza**  | Projeto acadêmico — UNIJORGE, Salvador, BA                  |
-| **Versão**    | MVP v1.0                                                    |
-| **Stack**     | HTML5 + CSS3 + JavaScript vanilla (sem frameworks)          |
-| **Fontes**    | Google Fonts — Great Vibes (títulos) + Zain (corpo)         |
-| **Foco**      | Experiência mobile-first                                    |
+  ---
+</div>
 
----
+## ✨ Conheça o Projeto
 
-## 📄 Páginas
+Bem-vindo(a) ao repositório do site profissional da **Juscelia Sousa**! 
 
-| Arquivo         | Seção           | Conteúdo                                              |
-|-----------------|-----------------|-------------------------------------------------------|
-| `index.html`    | Home            | Hero, imóveis em destaque, depoimentos                |
-| `imoveis.html`  | Imóveis         | Listagem completa com filtros de busca                |
-| `sobre.html`    | Sobre           | Apresentação da corretora, trajetória e especialidades|
-| Todas as páginas| Contato         | Botão flutuante WhatsApp + rodapé global              |
+Criamos este espaço para conectar pessoas aos seus lares dos sonhos em **Ituberá, Bahia**. O site foi desenhado para ser simples, bonito e extremamente fácil de navegar no dia a dia, principalmente na palma da sua mão através do celular. 📱
+
+### 🎯 O que o site oferece?
+- **Catálogo de Imóveis:** Fotos, detalhes e valores organizados de forma clara e objetiva.
+- **Contato Rápido:** Botões diretos para o WhatsApp da corretora para tirar dúvidas na hora.
+- **Apresentação Profissional:** Tudo sobre a trajetória, registro profissional e a dedicação da Juscelia aos seus clientes.
 
 ---
 
+## 👩‍💼 Sobre a Cliente
 
-## 📱 Foco Mobile-First
+| Informação | Detalhe |
+| :--- | :--- |
+| 🏷️ **Nome** | Juscelia Sousa |
+| 💼 **Registro** | CRECI 32.781 |
+| 📍 **Atuação** | Ituberá, Bahia |
+| 📞 **WhatsApp** | (73) 98102-8102 |
 
-| Breakpoint       | Largura         |
-|------------------|-----------------|
-| Base (mobile)    | 360px – 430px   |
-| Tablet           | 768px           |
-| Desktop          | 1024px+         |
-
-- ✅ Fonte mínima: **16px**
-- ✅ Área mínima clicável: **48px** (acessibilidade)
-- ✅ Hero usa **`100svh`** (compatível com mobile)
+> *"Ajudar pessoas a encontrarem seu novo lar é mais que uma profissão, é um compromisso."*
 
 ---
 
+## 🎓 A Equipe (Projeto Acadêmico)
 
-## ✅ Funcionalidades MVP
+Este projeto ganhou vida através do esforço conjunto de estudantes apaixonados por tecnologia, sendo desenvolvido como um trabalho prático para a disciplina de **Desenvolvimento Web** do **Centro Universitário Jorge Amado (UNIJORGE)** - Salvador, BA.
 
-### Concluídas
-- [x] Header fixo com menu hambúrguer responsivo
-- [x] Comportamento do header ao scroll (sombra + padding reduzido)
-- [x] Hero section com imagem de fundo, overlay e CTAs
-- [x] Botão WhatsApp com ícone SVG no header (número e mensagem configurados)
-- [x] Seção Sobre Mim (foto, bio, CRECI, especialidades)
-- [x] Seção Trajetória (3 cards: Compromisso, Experiência, Objetivo)
-- [x] CSS separado em arquivo externo (`style.css`)
-- [x] Código e comentários 100% em português
+**👨‍💻 Nossos Desenvolvedores:**
+> Arthur Vieira • Fernanda Pereira • Filipe de Jesus • Lucas Figueiredo • Arthur Carvalho • Alexandro Junior
 
-### Pendentes
-- [ ] Seção Imóveis em Destaque na Home (2–3 cards)
-- [ ] Seção de depoimentos (placeholder ou reais)
-- [ ] Listagem de imóveis com cards (~4–5 imóveis)
-- [ ] Filtros de busca (tipo, finalidade, faixa de preço, quartos)
-- [ ] Lightbox de fotos por imóvel
-- [ ] Mapa Google Maps embed por imóvel
-- [ ] Botão WhatsApp com mensagem personalizada por imóvel
-- [ ] Botão flutuante de WhatsApp em todas as páginas
-- [ ] Rodapé global
-- [ ] SEO básico (meta tags, og:tags, alt text, HTML semântico)
-
----
-
-## 👤 Contato da Cliente
-
-| Campo        | Informação                    |
-|--------------|-------------------------------|
-| **Nome**     | Juscelia Sousa                |
-| **CRECI**    | 32.781                        |
-| **Cidade**   | Ituberá, Bahia                |
-| **WhatsApp** | (73) 98102-8102               |
-| **Instagram**| A confirmar                   |
-
----
-
-## 🚀 Como Visualizar o Projeto
-
-Como trata-se de um projeto estático (sem backend), basta abrir o link: https://arthurjov.github.io/SiteCorretora ou iniciar o projeto localmente em`index.html` diretamente no navegador ou usar uma extensão como **Live Server** no VS Code para visualizar com recarga automática.
-
-```bash
-# Com Live Server (VS Code)
-# Clique com o botão direito em index.html → "Open with Live Server"
-```
-
----
-
-## 👨‍💻 Desenvolvedor
-
-Desenvolvido por **Arthur Vieira, 
-Fernanda Pereira, 
-Filipe de Jesus, 
-Lucas  Figueiredo, 
-Arthur Carvalho, 
-Alexandro Junior
-** como projeto acadêmico na disciplina de Desenvolvimento Web — **UNIJORGE (Centro Universitário Jorge Amado)**, Salvador, BA.
-
----
-
-*📅 31/03/2026 — Versão 1.0*
